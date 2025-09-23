@@ -19,165 +19,144 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <style>
+<style>
+  /* ------------------------------
+     PRELOADER
+  ------------------------------ */
+  html.preloader-active,
+  body.preloader-active {
+    overflow: hidden !important;
+    height: 100vh !important; /* trava altura no viewport */
+  }
 
-       /* Adicione no <style> */
-   @media (max-width: 768px) {
-     #preloader {
-       /* Força cobertura total na mobile */
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;      /* largura total */
-        height: 100vh;     /* altura total do viewport */
-        background: #fff;  /* ou a cor/gradiente que você estiver usando */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        overflow: hidden;  /* evita mostrar o site por baixo */
-        }
-     
-     #preloader img {
-       max-width: 80% !important; /* Aumente um pouco para telas pequenas */
-       max-height: 80% !important;
-     }
-   }
-   
-    
-    /* Adicione isso no <style> existente */
-   html.preloader-active,
-   body.preloader-active {
-     overflow: hidden !important;
-     height: 100vh !important; /* Limita a altura à viewport */
-   }
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    overflow: hidden; /* impede vazamento do site */
+    overscroll-behavior: contain;
+  }
 
+  #preloader img {
+    max-width: 250px;
+    height: auto;
+    animation: zoomIn 2s ease forwards;
+  }
 
-    /* Animação do zoom */
-    @keyframes zoomIn {
+  @media (max-width: 768px) {
+    #preloader img {
+      max-width: 80% !important;
+      max-height: 80% !important;
+    }
+  }
+
+  /* Zoom da logo */
+  @keyframes zoomIn {
     0% { transform: scale(0); opacity: 0; }
     50% { transform: scale(1.2); opacity: 1; }
     100% { transform: scale(1); opacity: 1; }
+  }
+
+  /* ------------------------------
+     BASE
+  ------------------------------ */
+  body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  }
+
+  /* ------------------------------
+     SERVICES
+  ------------------------------ */
+  .service-card {
+    transition: all 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .animate-delay-100 { animation-delay: 0.1s; }
+  .animate-delay-200 { animation-delay: 0.2s; }
+  .animate-delay-300 { animation-delay: 0.3s; }
+
+  /* ------------------------------
+     LOGO PLACEHOLDER
+  ------------------------------ */
+  .logo-placeholder {
+    width: 180px;
+    height: 60px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1e3a8a;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+
+  .logo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* ------------------------------
+     ANIMAÇÕES GLOBAIS
+  ------------------------------ */
+  @keyframes slideInLeft {
+    0% { transform: translateX(-50%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+
+  .slide-in-left {
+    animation: slideInLeft 4s ease-out forwards;
+  }
+
+  @keyframes slideInRight {
+    0% { transform: translateX(50%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+
+  .slide-in-right {
+    animation: slideInRight 4s ease-out forwards;
+  }
+
+  /* Logo e Menu */
+  @keyframes slideInFromRight {
+    0% { transform: translateX(100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+
+  @keyframes slideInFromLeft {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+
+  .animate-logo {
+    animation: slideInFromRight 4s ease forwards;
+  }
+
+  @media (min-width: 768px) {
+    .animate-menu-desktop {
+      animation: slideInFromLeft 4s ease forwards;
     }
-
-    .animate-zoom-in {
-    animation: zoomIn 2s ease forwards;
-    }
-
-
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    .hero-gradient {
-      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-
-    .service-card {
-      transition: all 0.3s ease;
-    }
-
-    .animate-delay-100 {
-      animation-delay: 0.1s;
-    }
-
-    .animate-delay-200 {
-      animation-delay: 0.2s;
-    }
-
-    .animate-delay-300 {
-      animation-delay: 0.3s;
-    }
-
-    .logo-placeholder {
-      width: 180px;
-      height: 60px;
-      background-color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #1e3a8a;
-      font-weight: bold;
-      border-radius: 4px;
-    }
-
-    .logo-placeholder img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    /* Animações de slide globais */
-    @keyframes slideInLeft {
-      0% {
-        transform: translateX(-50%);
-        opacity: 0;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-
-    .slide-in-left {
-      animation: slideInLeft 4s ease-out forwards;
-    }
-
-    @keyframes slideInRight {
-      0% {
-        transform: translateX(50%);
-        opacity: 0;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-
-    .slide-in-right {
-      animation: slideInRight 4s ease-out forwards;
-    }
-
-    /* Animações específicas para logo e menu */
-    @keyframes slideInFromRight {
-      0% {
-        transform: translateX(100%);
-        opacity: 0;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-
-    @keyframes slideInFromLeft {
-      0% {
-        transform: translateX(-100%);
-        opacity: 0;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-
-    .animate-logo {
-      animation: slideInFromRight 4s ease forwards;
-    }
-
-    @media (min-width: 768px) {
-      .animate-menu-desktop {
-        animation: slideInFromLeft 4s ease forwards;
-      }
-    }
-  </style>
+  }
+</style>
 
   <!-- Tailwind Custom Config -->
   <script>
@@ -305,7 +284,7 @@
                     Maximizando resultados e minimizando custos através de estratégias tributárias personalizadas para o seu negócio.
                 </p>
                 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="teste.html" class="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-primary transition text-center">
+                    <a href="#contact" class="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-primary transition text-center">
                         Solicitar Consultoria
                     </a>
                     <a href="#services" class="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-primary transition text-center">
