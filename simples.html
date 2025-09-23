@@ -211,10 +211,9 @@
   heroObserver.observe(heroTitleElement);
 </script>
 
-
-<!-- 2) Segunda Seção: Responsáveis Técnicos (Cards com animações e bolinhas de fundo) -->
-<section class="relative py-20 overflow-hidden bg-gray-50">
-  <!-- Background decorativo com bolinhas animadas -->
+<!-- Seção Responsáveis Técnicos com Cards Profissionais -->
+<section class="relative py-20 bg-gray-50">
+  <!-- Bolinhas animadas no fundo -->
   <div class="absolute inset-0 z-0 pointer-events-none">
     <div class="absolute w-96 h-96 bg-primary/50 rounded-full -top-24 -left-24 animate-blob"></div>
     <div class="absolute w-72 h-72 bg-accent/50 rounded-full -bottom-24 -right-24 animate-blob animation-delay-2000"></div>
@@ -222,79 +221,83 @@
   </div>
 
   <div class="container mx-auto px-6 relative z-10">
-    <div class="max-w-6xl mx-auto text-center">
-      <!-- Título animado -->
-      <h2 id="animated-rt-title" class="text-3xl md:text-4xl font-bold mb-12 text-gray-900">
-        Responsáveis Técnicos - Avaliação e Validação Jurídica
-      </h2>
+    <!-- Título animado -->
+    <h2 id="animated-rt-title" class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900"></h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <!-- Cards dos Responsáveis Técnicos -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-        <!-- Profissional 2 -->
-        <div class="card-blur relative z-10 rounded-xl shadow-lg p-6 transition transform hover:scale-105 hover:shadow-2xl animate-slide-up bg-gray-400">
-          <img src="https://i.ibb.co/CKq5bTK7/aleandro2.png" alt="Profissional 2" class="w-full h-72 object-cover rounded-lg mb-4">
-          <h3 class="text-xl font-semibold mb-4 text-gray-900">Dr. Aleandro Pinto</h3>
-          <ul class="space-y-2 text-gray-800">
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Professor de direito tributário na PUC-MG</li>
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Mestre em direito tributário pela Universidade FUMEC</li>
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Autor dos livros: Lições de Direito Tributário e A Ineficácia do Direito Penal Tributário.</li>
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Advogado e conselheiro do Conselho de Contribuinte do Estado de Minas Gerais.</li>
-          </ul>
+      <!-- Card 1 -->
+      <div class="flex flex-col items-start p-8 bg-gray-400 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-300 h-full">
+        <div class="w-20 h-20 flex items-center justify-center bg-white text-primary text-4xl rounded-full shadow-md mb-6">
+          <i class="fas fa-user-graduate"></i>
         </div>
-
-        <!-- Profissional 3 -->
-        <div class="card-blur relative z-10 rounded-xl shadow-lg p-6 transition transform hover:scale-105 hover:shadow-2xl animate-slide-up animation-delay-200 bg-gray-400">
-          <img src="https://i.ibb.co/fYXHRBym/aleandro2.png" alt="Profissional 3" class="w-full h-72 object-cover rounded-lg mb-4">
-          <h3 class="text-xl font-semibold mb-4 text-gray-900">Dra. Polyany Cunha</h3>
-          <ul class="space-y-2 text-gray-800">
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Especialista em direito tributário e empresarial</li>
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Professora de pós-graduação na PUC-MG</li>
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Especialista em direito societário e compliance</li>
-          </ul>
-        </div>
-
-        <!-- Profissional 4 -->
-        <div class="card-blur relative z-10 rounded-xl shadow-lg p-6 transition transform hover:scale-105 hover:shadow-2xl animate-slide-up animation-delay-400 bg-gray-400">
-          <img src="https://i.postimg.cc/k5W2SThf/sauro.jpg" alt="Profissional 4" class="w-full h-72 object-cover rounded-lg mb-4">
-          <h3 class="text-xl font-semibold mb-4 text-gray-900">Dr. Sauro Henrique de Almeida</h3>
-          <ul class="space-y-2 text-gray-800">
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Vice-presidente da Junta Comercial de MG</li>
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Conselheiro do Conselho de Contribuintes do Estado de Minas Gerais</li>
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Presidente do SESCON/MG</li>
-          </ul>
-        </div>
-
-        <!-- Profissional 1 -->
-        <div class="card-blur relative z-10 rounded-xl shadow-lg p-6 transition transform hover:scale-105 hover:shadow-2xl animate-slide-up animation-delay-600 bg-gray-400">
-          <img src="https://i.postimg.cc/d1rd6qNP/antonio.jpg" alt="Profissional 1" class="w-full h-72 object-cover rounded-lg mb-4">
-          <h3 class="text-xl font-semibold mb-4 text-gray-900">Dr. Antônio Cesar Ribeiro</h3>
-          <ul class="space-y-2 text-gray-800">
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Vice presidente do conselho de contribuintes – AGE-MG (2024-2026)</li>
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Presidência e coordenação de sessões do CCMG</li>
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Elaboração de pareceres tributários com fundamento legal</li>
-          </ul>
-        </div>
-
+        <h3 class="text-xl font-semibold mb-4 text-primary">1. Profissionais Altamente Capacitados</h3>
+        <p class="text-white text-base leading-relaxed">
+          Nossos responsáveis técnicos são profissionais altamente capacitados, com formação sólida e experiência reconhecida no cenário tributário e jurídico de Minas Gerais. Eles dominam não apenas a teoria, mas também a prática cotidiana, garantindo segurança e assertividade em cada parecer emitido.
+        </p>
       </div>
+
+      <!-- Card 2 -->
+      <div class="flex flex-col items-start p-8 bg-gray-400 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-300 h-full">
+        <div class="w-20 h-20 flex items-center justify-center bg-white text-primary text-4xl rounded-full shadow-md mb-6">
+          <i class="fas fa-briefcase"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-4 text-primary">2. Expertise em Áreas Estratégicas</h3>
+        <p class="text-white text-base leading-relaxed">
+          Com vasta experiência nas áreas de direito tributário, societário e compliance, nossos especialistas estão preparados para fornecer soluções sob medida para cada desafio. Essas áreas são cruciais para garantir uma gestão empresarial eficiente, legalmente respaldada e com foco em crescimento estratégico.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="flex flex-col items-start p-8 bg-gray-400 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-300 h-full">
+        <div class="w-20 h-20 flex items-center justify-center bg-white text-primary text-4xl rounded-full shadow-md mb-6">
+          <i class="fas fa-scale-balanced"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-4 text-primary">3. Análises Fundamentadas e Precisão Jurídica</h3>
+        <p class="text-white text-base leading-relaxed">
+          Cada análise e parecer jurídico é cuidadosamente elaborado com base em estudos técnicos rigorosos. Nosso objetivo é oferecer argumentos sólidos, embasamento legal confiável e total clareza para subsidiar a tomada de decisão por parte de nossos clientes.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="flex flex-col items-start p-8 bg-gray-400 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-300 h-full">
+        <div class="w-20 h-20 flex items-center justify-center bg-white text-primary text-4xl rounded-full shadow-md mb-6">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-4 text-primary">4. Segurança e Crescimento Sustentável</h3>
+        <p class="text-white text-base leading-relaxed">
+          Ao contar com o suporte de nossos especialistas, sua empresa ganha segurança jurídica para enfrentar os desafios fiscais e regulatórios. Trabalhamos para garantir estabilidade e fomentar um crescimento sustentável, com foco na longevidade e competitividade do seu negócio.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Botão fixo -->
+    <div class="flex justify-center mt-12">
+      <a href="home.html#responsaveis" 
+         class="border-2 border-primary text-primary px-8 py-3 rounded-md font-medium hover:bg-primary hover:text-white transition text-center shadow-lg">
+        Conheça Todos os Responsáveis
+      </a>
     </div>
   </div>
 </section>
 
-<!-- JavaScript para animar o título Responsáveis Técnicos -->
+<!-- JavaScript para animar apenas o título -->
 <script>
   const rtTitleText = "Responsáveis Técnicos - Avaliação e Validação Jurídica";
   const rtTitleElement = document.getElementById("animated-rt-title");
   let rtAnimated = false;
 
   function animateRTTitle() {
-    rtTitleElement.innerHTML = ""; // limpa o título
-    const words = rtTitleText.split(" "); // separar por palavras
+    rtTitleElement.innerHTML = "";
+    const words = rtTitleText.split(" ");
 
     words.forEach((word, index) => {
       const span = document.createElement("span");
       span.textContent = word;
-      span.style.display = "inline-block"; 
-      span.style.marginRight = "0.25em"; 
+      span.style.display = "inline-block";
+      span.style.marginRight = "0.25em";
       span.style.opacity = "0";
       span.style.transform = "translateY(10px)";
       span.style.transition = "all 1s ease-out";
@@ -304,11 +307,10 @@
       setTimeout(() => {
         span.style.opacity = "1";
         span.style.transform = "translateY(0)";
-      }, index * 300); 
+      }, index * 300);
     });
   }
 
-  // Observer para ativar a animação ao entrar na tela
   const rtObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if(entry.isIntersecting && !rtAnimated){
@@ -320,6 +322,7 @@
 
   rtObserver.observe(rtTitleElement);
 </script>
+
 
 <!-- 3) Terceira Seção: Por que sua empresa... (Preto e Botões Padronizados) -->
 <section class="hero-gradient text-white pt-32 pb-20 relative overflow-hidden">
@@ -598,7 +601,7 @@
 </script>
 
     <!-- Botões -->
-    <div class="flex justify-center mt-6">
+    <div class="flex justify-center mt-6 mb-24">
       <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
         <a href="home.html#contact" class="border-2 border-primary text-primary px-8 py-3 rounded-md font-medium hover:bg-primary hover:text-white transition text-center shadow-lg">
           Solicitar Consultoria

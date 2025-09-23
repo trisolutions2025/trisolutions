@@ -19,6 +19,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
+
+    /* Animação do zoom */
+    @keyframes zoomIn {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+    }
+
+    .animate-zoom-in {
+    animation: zoomIn 2s ease forwards;
+    }
+
+
+
     body {
       font-family: 'Poppins', sans-serif;
       scroll-behavior: smooth;
@@ -179,6 +193,31 @@
    <span>Fale conosco</span>
 </a>
 
+
+
+
+<!-- Preloader -->
+<div id="preloader" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+  <img src="https://i.postimg.cc/vDFWT5Pn/logo2.png" alt="Logo TRIsolutions" 
+       class="max-w-[60%] max-h-[60%] animate-zoom-in object-contain"> 
+</div>
+
+<script>
+  window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+    setTimeout(() => {
+      preloader.style.opacity = "0";
+      preloader.style.transition = "opacity 2s ease";
+      setTimeout(() => preloader.style.display = "none", 2000); 
+    }, 4000); // espera a animação da logo terminar
+  });
+</script>
+
+
+
+
+
+
   <!-- NAVBAR -->
   <nav class="relative bg-gradient-to-r from-gray-300 via-gray-300 to-white shadow-md sticky top-0 z-50">
     <div class="w-full px-6 py-3 flex items-center justify-between">
@@ -306,7 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-<!-- About Section Premium -->
+ <!-- About Section Premium -->
 <section id="about" class="relative py-20 overflow-hidden">
     <!-- Background decorativo -->
     <div class="absolute inset-0 -z-10">
@@ -317,24 +356,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <div class="container mx-auto px-6">
         <div class="flex flex-col md:flex-row items-center gap-12">
-            
+
             <!-- Slide de imagens da equipe -->
-            <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in overflow-hidden rounded-xl shadow-2xl">
-                <img id="about-image-slide" src="https://i.ibb.co/JN0s073/Capturar.png" alt="Equipe TRIsolutions" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105 rounded-xl">
+            <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in overflow-hidden rounded-xl shadow-2xl relative h-[300px] md:h-[400px]">
+                <div id="image-slider" class="w-full h-full relative">
+                    <img src="https://i.ibb.co/JN0s073/Capturar.png" alt="Slide 1" class="absolute inset-0 w-full h-full object-cover rounded-xl opacity-100 transition-opacity duration-1000">
+                    <img src="https://i.ibb.co/zXY8qXN/equipe2.jpg" alt="Slide 2" class="absolute inset-0 w-full h-full object-cover rounded-xl opacity-0 transition-opacity duration-1000">
+                    <img src="https://i.ibb.co/YtY8tkz/equipe3.jpg" alt="Slide 3" class="absolute inset-0 w-full h-full object-cover rounded-xl opacity-0 transition-opacity duration-1000">
+                </div>
             </div>
-            
+
             <!-- Texto e Vantagens -->
             <div class="md:w-1/2 md:pl-12 animate-slide-up bg-white/80 backdrop-blur-md rounded-xl p-8 shadow-lg">
                 <!-- Título animado -->
                 <h2 id="animated-about-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 tracking-tight"></h2>
-                
+
                 <p class="text-gray-700 mb-4 leading-relaxed">
                     Fundada com o propósito de transformar a complexidade tributária em vantagem competitiva, a TRIsolutions se consolidou como referência em consultoria tributária estratégica.
                 </p>
                 <p class="text-gray-700 mb-6 leading-relaxed">
                     Nossa equipe multidisciplinar combina expertise técnica com visão empresarial, desenvolvendo soluções personalizadas que alinham conformidade fiscal com eficiência financeira.
                 </p>
-                
+
                 <div class="space-y-5">
                     <div class="flex items-start">
                         <div class="flex-shrink-0 mt-1">
@@ -360,8 +403,9 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 </section>
 
-<!-- JavaScript para animação do título "Sobre a TRIsolutions" -->
+<!-- JavaScript para animação do título e slide de imagens -->
 <script>
+  // Animação do título
   const aboutTitleText = "Sobre a TRIsolutions";
   const aboutTitleElement = document.getElementById("animated-about-title");
   let aboutAnimated = false;
@@ -398,11 +442,28 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.5 });
 
   aboutObserver.observe(aboutTitleElement);
+
+
+  // Slide de imagens
+  const slideImages = document.querySelectorAll("#image-slider img");
+  let currentSlide = 0;
+
+  setInterval(() => {
+    // Oculta todas as imagens
+    slideImages.forEach((img) => {
+      img.style.opacity = "0";
+    });
+
+    // Mostra a próxima
+    currentSlide = (currentSlide + 1) % slideImages.length;
+    slideImages[currentSlide].style.opacity = "1";
+  }, 3000); // muda a cada 3 segundos
 </script>
 
-<!-- 2) Terceira Seção: Responsáveis Técnicos (Cards com animações e bolinhas de fundo) -->
-<section class="relative py-20 overflow-hidden bg-gray-50">
-  <!-- Background decorativo com bolinhas animadas -->
+
+<!-- Seção Responsáveis Técnicos com Cards Profissionais -->
+<section class="relative py-20 bg-gray-50" id="responsaveis">
+  <!-- Bolinhas animadas no fundo -->
   <div class="absolute inset-0 z-0 pointer-events-none">
     <div class="absolute w-96 h-96 bg-primary/50 rounded-full -top-24 -left-24 animate-blob"></div>
     <div class="absolute w-72 h-72 bg-accent/50 rounded-full -bottom-24 -right-24 animate-blob animation-delay-2000"></div>
@@ -410,79 +471,74 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 
   <div class="container mx-auto px-6 relative z-10">
-    <div class="max-w-6xl mx-auto text-center">
-      <!-- Título animado -->
-      <h2 id="animated-rt-title" class="text-3xl md:text-4xl font-bold mb-12 text-gray-900">
-        Responsáveis Técnicos - Avaliação e Validação Jurídica
-      </h2>
+    <!-- Título animado -->
+    <h2 id="animated-rt-title" class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900"></h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Cards dos Responsáveis Técnicos -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Card 1 -->
+      <div class="flex flex-col items-start p-6 bg-gray-400 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-300">
+        <img src="https://i.postimg.cc/k5W2SThf/sauro.jpg" alt="Dr. Sauro Henrique de Almeida" class="w-24 h-24 object-cover rounded-full shadow-md mb-4" />
+        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Dr. Sauro Henrique de Almeida</h3> <!-- Tamanho da fonte aumentado -->
+        <ul class="space-y-2 text-white opacity-90 text-base"> <!-- Fonte das qualificações aumentada -->
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Vice-presidente da Junta Comercial de MG</li>
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Conselheiro do Conselho de Contribuintes do Estado de Minas Gerais</li>
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Presidente do SESCON/MG</li>
+        </ul>
+      </div>
 
-        <!-- Profissional 2 -->
-        <div class="card-blur relative z-10 rounded-xl shadow-lg p-6 transition transform hover:scale-105 hover:shadow-2xl animate-slide-up bg-gray-400">
-          <img src="https://i.ibb.co/CKq5bTK7/aleandro2.png" alt="Profissional 2" class="w-full h-72 object-cover rounded-lg mb-4">
-          <h3 class="text-xl font-semibold mb-4 text-gray-900">Dr. Aleandro Pinto</h3>
-          <ul class="space-y-2 text-gray-800">
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Professor de direito tributário na PUC-MG</li>
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Mestre em direito tributário pela Universidade FUMEC</li>
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Autor dos livros: Lições de Direito Tributário e A Ineficácia do Direito Penal Tributário.</li>
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Advogado e conselheiro do Conselho de Contribuinte do Estado de Minas Gerais.</li>
-          </ul>
-        </div>
+      <!-- Card 2 -->
+      <div class="flex flex-col items-start p-6 bg-gray-400 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-300">
+        <img src="https://i.ibb.co/CKq5bTK7/aleandro2.png" alt="Dr. Aleandro Pinto" class="w-24 h-24 object-cover rounded-full shadow-md mb-4" />
+        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Dr. Aleandro Pinto</h3> <!-- Tamanho da fonte aumentado -->
+        <ul class="space-y-2 text-white opacity-90 text-base"> <!-- Fonte das qualificações aumentada -->
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Professor de direito tributário na PUC-MG</li>
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Mestre em direito tributário pela Universidade FUMEC</li>
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Autor dos livros: Lições de Direito Tributário e A Ineficácia do Direito Penal Tributário.</li>
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Advogado e conselheiro do Conselho de Contribuinte do Estado de Minas Gerais.</li>
+        </ul>
+      </div>
 
-        <!-- Profissional 3 -->
-        <div class="card-blur relative z-10 rounded-xl shadow-lg p-6 transition transform hover:scale-105 hover:shadow-2xl animate-slide-up animation-delay-200 bg-gray-400">
-          <img src="https://i.ibb.co/fYXHRBym/aleandro2.png" alt="Profissional 3" class="w-full h-72 object-cover rounded-lg mb-4">
-          <h3 class="text-xl font-semibold mb-4 text-gray-900">Dra. Polyany Cunha</h3>
-          <ul class="space-y-2 text-gray-800">
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Especialista em direito tributário e empresarial</li>
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Professora de pós-graduação na PUC-MG</li>
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Especialista em direito societário e compliance</li>
-          </ul>
-        </div>
+      <!-- Card 3 -->
+      <div class="flex flex-col items-start p-6 bg-gray-400 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-300">
+        <img src="https://i.ibb.co/fYXHRBym/aleandro2.png" alt="Dra. Polyany Cunha" class="w-24 h-24 object-cover rounded-full shadow-md mb-4" />
+        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Dra. Polyany Cunha</h3> <!-- Tamanho da fonte aumentado -->
+        <ul class="space-y-2 text-white opacity-90 text-base"> <!-- Fonte das qualificações aumentada -->
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Especialista em direito tributário e empresarial</li>
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Professora de pós-graduação na PUC-MG</li>
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Especialista em direito societário e compliance</li>
+        </ul>
+      </div>
 
-        <!-- Profissional 4 -->
-        <div class="card-blur relative z-10 rounded-xl shadow-lg p-6 transition transform hover:scale-105 hover:shadow-2xl animate-slide-up animation-delay-400 bg-gray-400">
-          <img src="https://i.postimg.cc/k5W2SThf/sauro.jpg" alt="Profissional 4" class="w-full h-72 object-cover rounded-lg mb-4">
-          <h3 class="text-xl font-semibold mb-4 text-gray-900">Dr. Sauro Henrique de Almeida</h3>
-          <ul class="space-y-2 text-gray-800">
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Vice-presidente da Junta Comercial de MG</li>
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Conselheiro do Conselho de Contribuintes do Estado de Minas Gerais</li>
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Presidente do SESCON/MG</li>
-          </ul>
-        </div>
-
-        <!-- Profissional 1 -->
-        <div class="card-blur relative z-10 rounded-xl shadow-lg p-6 transition transform hover:scale-105 hover:shadow-2xl animate-slide-up animation-delay-600 bg-gray-400">
-          <img src="https://i.postimg.cc/d1rd6qNP/antonio.jpg" alt="Profissional 1" class="w-full h-72 object-cover rounded-lg mb-4">
-          <h3 class="text-xl font-semibold mb-4 text-gray-900">Dr. Antônio Cesar Ribeiro</h3>
-          <ul class="space-y-2 text-gray-800">
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Vice presidente do conselho de contribuintes – AGE-MG (2024-2026)</li>
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Presidência e coordenação de sessões do CCMG</li>
-            <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Elaboração de pareceres tributários com fundamento legal</li>
-          </ul>
-        </div>
-
+      <!-- Card 4 -->
+      <div class="flex flex-col items-start p-6 bg-gray-400 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-300">
+        <img src="https://i.postimg.cc/d1rd6qNP/antonio.jpg" alt="Dr. Antônio Cesar Ribeiro" class="w-24 h-24 object-cover rounded-full shadow-md mb-4" />
+        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Dr. Antônio Cesar Ribeiro</h3> <!-- Tamanho da fonte aumentado -->
+        <ul class="space-y-2 text-white opacity-90 text-base"> <!-- Fonte das qualificações aumentada -->
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Vice-presidente do conselho de contribuintes – AGE-MG (2024-2026)</li>
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Presidência e coordenação de sessões do CCMG</li>
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Elaboração de pareceres tributários com fundamento legal</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- JavaScript para animar o título Responsáveis Técnicos -->
+<!-- JavaScript para animar apenas o título -->
 <script>
   const rtTitleText = "Responsáveis Técnicos - Avaliação e Validação Jurídica";
   const rtTitleElement = document.getElementById("animated-rt-title");
   let rtAnimated = false;
 
   function animateRTTitle() {
-    rtTitleElement.innerHTML = ""; // limpa o título
-    const words = rtTitleText.split(" "); // separar por palavras
+    rtTitleElement.innerHTML = "";
+    const words = rtTitleText.split(" ");
 
     words.forEach((word, index) => {
       const span = document.createElement("span");
       span.textContent = word;
-      span.style.display = "inline-block"; 
-      span.style.marginRight = "0.25em"; 
+      span.style.display = "inline-block";
+      span.style.marginRight = "0.25em";
       span.style.opacity = "0";
       span.style.transform = "translateY(10px)";
       span.style.transition = "all 1s ease-out";
@@ -492,11 +548,10 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         span.style.opacity = "1";
         span.style.transform = "translateY(0)";
-      }, index * 300); 
+      }, index * 300);
     });
   }
 
-  // Observer para ativar a animação ao entrar na tela
   const rtObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if(entry.isIntersecting && !rtAnimated){
@@ -759,7 +814,7 @@ servicesObserver.observe(servicesTitleElement);
 </script>
 
 <!-- CTA Section Estilizada -->
-<section class="relative py-24 bg-gradient-to-r from-blue-900 to-blue-700 text-white overflow-hidden">
+<section class="relative py-24 bg-gradient-to-r from-blue-900 to-blue-700 text-white overflow-hidden" id="contact">
     <!-- Elementos decorativos -->
     <div class="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 animate-float"></div>
     <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/4 translate-y-1/4 animate-float"></div>
@@ -772,7 +827,7 @@ servicesObserver.observe(servicesTitleElement);
             Agende uma consultoria gratuita e descubra como podemos ajudar sua empresa a economizar com estratégias tributárias inteligentes.
         </p>
         <a href="#contact" class="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-primary transition text-center animate-slide-up animate-delay-200">
-            Consultoria gratuita
+           Solicitar consultoria gratuita
         </a>
     </div>
 </section>
@@ -788,57 +843,77 @@ servicesObserver.observe(servicesTitleElement);
 }
 </style>
 
-    <!-- Footer -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
-    <footer class="bg-gray-900 text-white py-12">
-    <div class="container mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between">
-            <div class="mb-8 md:mb-0">
-                <div class="mb-4">
-                    <span class="text-5xl font-semibold text-white animate-logo" style="font-family: 'Cinzel', serif;">
-                        TRIsolutions
-                    </span>
-                </div>
-                <p class="text-gray-400 max-w-xs">
-                    Especialistas em soluções tributárias estratégicas para empresas de todos os portes e segmentos.
-                </p>
-            </div>
-                
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
-                    <div>
-                        <h4 class="text-lg font-bold mb-4">Serviços</h4>
-                        <ul class="space-y-2">
-                            <li><a href="simples.html" class="text-gray-400 hover:text-white transition">Simples Nacional</a></li>
-                            <li><a href="previdenciario.html" class="text-gray-400 hover:text-white transition">Previdenciário</a></li>
-                            <li><a href="subvencao.html" class="text-gray-400 hover:text-white transition">Subvenção</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h4 class="text-lg font-bold mb-4">Empresa</h4>
-                        <ul class="space-y-2">
-                            <li><a href="#about" class="text-gray-400 hover:text-white transition">Sobre Nós</a></li>                                                        
-                            <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contato</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h4 class="text-lg font-bold mb-4">Legal</h4>
-                        <ul class="space-y-2">
-                            <li><a href="#" class="text-gray-400 hover:text-white transition">Termos de Uso</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white transition">Política de Privacidade</a></li>
-                            <li><a{"ok":false,"message":"terminated"}
+<!-- Footer -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
 
-             <!-- SCRIPT DO MENU -->
-              <script>
-              document.addEventListener('DOMContentLoaded', () => {
-              const toggleButton = document.getElementById('menu-toggle');
-              const mobileMenu = document.getElementById('mobile-menu');
+<footer class="bg-gray-900 text-white py-12">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between">
 
-              toggleButton.addEventListener('click', () => {
-              mobileMenu.classList.toggle('hidden');
-              });
-              });
-              </script>    
-                    </body>
-                          </html>
+      <!-- Logo e descrição -->
+      <div class="mb-8 md:mb-0">
+        <div class="mb-4">
+          <span class="text-5xl font-semibold text-white animate-logo" style="font-family: 'Cinzel', serif;">
+            TRIsolutions
+          </span>
+        </div>
+        <p class="text-gray-400 max-w-xs">
+          Especialistas em soluções tributárias estratégicas para empresas de todos os portes e segmentos.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+
+        <!-- Serviços -->
+        <div>
+          <h4 class="text-lg font-bold mb-4">Serviços</h4>
+          <ul class="space-y-2">
+            <li><a href="simples.html" class="text-gray-400 hover:text-white transition">Simples Nacional</a></li>
+            <li><a href="previdenciario.html" class="text-gray-400 hover:text-white transition">Previdenciário</a></li>
+            <li><a href="subvencao.html" class="text-gray-400 hover:text-white transition">Subvenção</a></li>
+          </ul>
+        </div>
+
+        <!-- Empresa -->
+        <div>
+          <h4 class="text-lg font-bold mb-4">Empresa</h4>
+          <ul class="space-y-2">
+            <li><a href="#about" class="text-gray-400 hover:text-white transition">Sobre Nós</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contato</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div>
+          <h4 class="text-lg font-bold mb-4">Legal</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Termos de Uso</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Política de Privacidade</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Cookies</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="mt-12 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
+      &copy; 2025 TRIsolutions. Todos os direitos reservados.
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPT DO MENU -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    toggleButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  });
+</script>
+</body>
+</html>
