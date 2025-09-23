@@ -356,116 +356,84 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
- <!-- ABOUT (corrigido: slider visível no mobile) -->
-  <section id="about" class="relative py-20 overflow-hidden">
-    <!-- decorative shapes (behind) -->
-    <div class="absolute inset-0 -z-10 pointer-events-none">
-      <div class="absolute w-72 h-72 bg-primary/20 rounded-full -top-16 -left-12 hidden sm:block"></div>
-    </div>
+<!-- ABOUT -->
+<section id="about" class="relative py-20 overflow-hidden">
+  <!-- shapes de fundo -->
+  <div class="absolute inset-0 -z-10 pointer-events-none">
+    <div class="absolute w-72 h-72 bg-primary/20 rounded-full -top-16 -left-12 hidden sm:block"></div>
+  </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row items-center gap-8">
-        <!-- SLIDER: wrapper has responsive min-height so it never collapses -->
-        <div class="md:w-1/2 mb-8 md:mb-0 about-slider-wrapper">
-          <div id="image-slider" class="relative w-full h-full rounded-xl shadow-2xl">
-            <!-- slides: use class "slide" and first gets "active" from JS on DOMContentLoaded -->
-            <div class="slide">
-              <img class="img-responsive w-full h-full" src="https://i.postimg.cc/wjLg6gg8/8.png" alt="Equipe - slide 1" loading="lazy">
-            </div>
-            <div class="slide">
-              <img class="img-responsive w-full h-full" src="https://i.postimg.cc/Px895ktc/6.png" alt="Equipe - slide 2" loading="lazy">
-            </div>
-            <div class="slide">
-              <img class="img-responsive w-full h-full" src="https://i.postimg.cc/PqHP4d7b/7.png" alt="Equipe - slide 3" loading="lazy">
-            </div>
-          </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- flex responsivo -->
+    <div class="flex flex-col md:flex-row items-center gap-10">
+      
+      <!-- SLIDER (sempre em cima no mobile, à esquerda no desktop) -->
+      <div class="md:w-1/2 about-slider-wrapper relative h-[250px] md:h-[400px]">
+        <div id="image-slider" class="relative w-full h-full rounded-xl shadow-2xl overflow-hidden">
+          <img src="https://i.postimg.cc/wjLg6gg8/8.png" 
+               alt="Equipe - slide 1"
+               class="slide absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-700">
+          <img src="https://i.postimg.cc/Px895ktc/6.png" 
+               alt="Equipe - slide 2"
+               class="slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700">
+          <img src="https://i.postimg.cc/PqHP4d7b/7.png" 
+               alt="Equipe - slide 3"
+               class="slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700">
         </div>
+      </div>
 
-        <!-- TEXT & BENEFITS -->
-        <div class="md:w-1/2 md:pl-12 bg-white/80 backdrop-blur-md rounded-xl p-6 shadow-lg">
-          <h2 id="animated-about-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Sobre a TRIsolutions</h2>
-          <p class="text-gray-700 mb-3 leading-relaxed">Fundada com o propósito de transformar a complexidade tributária em vantagem competitiva, a TRIsolutions se consolidou como referência em consultoria tributária estratégica.</p>
-          <p class="text-gray-700 mb-4 leading-relaxed">Nossa equipe multidisciplinar combina expertise técnica com visão empresarial, desenvolvendo soluções personalizadas que alinham conformidade fiscal com eficiência financeira.</p>
+      <!-- TEXTO (abaixo no mobile, à direita no desktop) -->
+      <div class="md:w-1/2 md:pl-12 bg-white/80 backdrop-blur-md rounded-xl p-6 shadow-lg">
+        <h2 id="animated-about-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          Sobre a TRIsolutions
+        </h2>
 
-          <div class="space-y-4">
-            <div class="flex items-start">
-              <i class="fas fa-check-circle text-primary text-2xl mt-1"></i>
-              <p class="ml-4 text-gray-700">Prontidão no atendimento e suporte consultivo ágil</p>
-            </div>
-            <div class="flex items-start">
-              <i class="fas fa-check-circle text-primary text-2xl mt-1"></i>
-              <p class="ml-4 text-gray-700">Equipe altamente qualificada e atualizada com as mudanças legislativas</p>
-            </div>
-            <div class="flex items-start">
-              <i class="fas fa-check-circle text-primary text-2xl mt-1"></i>
-              <p class="ml-4 text-gray-700">Metodologia própria de análise e planejamento tributário</p>
-            </div>
+        <p class="text-gray-700 mb-3 leading-relaxed">
+          Fundada com o propósito de transformar a complexidade tributária em vantagem competitiva, a TRIsolutions se consolidou como referência em consultoria tributária estratégica.
+        </p>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          Nossa equipe multidisciplinar combina expertise técnica com visão empresarial, desenvolvendo soluções personalizadas que alinham conformidade fiscal com eficiência financeira.
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <i class="fas fa-check-circle text-primary text-2xl mt-1"></i>
+            <p class="ml-4 text-gray-700">Prontidão no atendimento e suporte consultivo ágil</p>
+          </div>
+          <div class="flex items-start">
+            <i class="fas fa-check-circle text-primary text-2xl mt-1"></i>
+            <p class="ml-4 text-gray-700">Equipe altamente qualificada e atualizada com as mudanças legislativas</p>
+          </div>
+          <div class="flex items-start">
+            <i class="fas fa-check-circle text-primary text-2xl mt-1"></i>
+            <p class="ml-4 text-gray-700">Metodologia própria de análise e planejamento tributário</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-<!-- JavaScript para animação do título e slide de imagens -->
+<!-- JS do slider -->
 <script>
-  // Animação do título
-  const aboutTitleText = "Sobre a TRIsolutions";
-  const aboutTitleElement = document.getElementById("animated-about-title");
-  let aboutAnimated = false;
-
-  function animateAboutTitle() {
-    aboutTitleElement.innerHTML = ""; // limpa o título
-    const words = aboutTitleText.split(" ");
-
-    words.forEach((word, index) => {
-      const span = document.createElement("span");
-      span.textContent = word;
-      span.style.display = "inline-block";
-      span.style.marginRight = "0.25em";
-      span.style.opacity = "0";
-      span.style.transform = "translateY(15px)";
-      span.style.transition = "all 0.8s ease-out";
-
-      aboutTitleElement.appendChild(span);
-
-      setTimeout(() => {
-        span.style.opacity = "1";
-        span.style.transform = "translateY(0)";
-      }, index * 600); // delay entre palavras
-    });
-  }
-
-  const aboutObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !aboutAnimated) {
-        aboutAnimated = true;
-        animateAboutTitle();
-      }
-    });
-  }, { threshold: 0.5 });
-
-  aboutObserver.observe(aboutTitleElement);
-
-  // Slide de imagens
-  const slideImages = document.querySelectorAll("#image-slider img");
+  const slideImages = document.querySelectorAll("#image-slider .slide");
   let currentSlide = 0;
 
-  // garante que a primeira imagem esteja visível no carregamento
   if (slideImages.length > 0) {
-    slideImages[currentSlide].style.opacity = "1";
+    slideImages[currentSlide].classList.add("opacity-100");
   }
 
   setInterval(() => {
     if (slideImages.length === 0) return;
 
-    // Oculta todas as imagens e mostra apenas a atual
-    slideImages.forEach((img, index) => {
-      img.style.opacity = index === currentSlide ? "1" : "0";
-    });
+    slideImages[currentSlide].classList.remove("opacity-100");
+    slideImages[currentSlide].classList.add("opacity-0");
 
-    // Próximo slide
     currentSlide = (currentSlide + 1) % slideImages.length;
-  }, 3000); // muda a cada 3 segundos
+
+    slideImages[currentSlide].classList.remove("opacity-0");
+    slideImages[currentSlide].classList.add("opacity-100");
+  }, 3000);
 </script>
 
 
