@@ -357,84 +357,151 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <!-- ABOUT -->
-<section id="about" class="relative py-20 overflow-hidden">
-  <!-- shapes de fundo -->
-  <div class="absolute inset-0 -z-10 pointer-events-none">
-    <div class="absolute w-72 h-72 bg-primary/20 rounded-full -top-16 -left-12 hidden sm:block"></div>
+<section id="about" class="relative bg-black/10 py-20 md:py-32 overflow-hidden">
+  <!-- Fundo GIF proporcional -->
+  <div class="absolute inset-0">
+    <img src="https://i.postimg.cc/mgGrM4WT/logogif.gif" alt="Fundo" class="w-full h-full object-contain object-center opacity-40">
+    <div class="absolute inset-0 bg-black/50"></div> <!-- Sobreposição escura -->
   </div>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- flex responsivo -->
-    <div class="flex flex-col md:flex-row items-center gap-10">
-      
-      <!-- SLIDER (sempre em cima no mobile, à esquerda no desktop) -->
-      <div class="md:w-1/2 about-slider-wrapper relative h-[250px] md:h-[400px]">
-        <div id="image-slider" class="relative w-full h-full rounded-xl shadow-2xl overflow-hidden">
-          <img src="https://i.postimg.cc/wjLg6gg8/8.png" 
-               alt="Equipe - slide 1"
-               class="slide absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-700">
-          <img src="https://i.postimg.cc/Px895ktc/6.png" 
-               alt="Equipe - slide 2"
-               class="slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700">
-          <img src="https://i.postimg.cc/PqHP4d7b/7.png" 
-               alt="Equipe - slide 3"
-               class="slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700">
+  <div class="container mx-auto px-6 md:px-12 relative z-10 text-center">
+    <!-- Título animado -->
+    <h2 id="animated-about-title" class="text-4xl md:text-5xl font-bold text-white mb-8">
+      Sobre a TRIsolutions.
+    </h2>
+
+    <!-- Texto original da seção -->
+    <p class="text-white text-lg md:text-xl leading-relaxed mb-12 animate-fadeInUp delay-200">
+      Fundada com o propósito de transformar a complexidade tributária em vantagem competitiva, a TRIsolutions se consolidou como referência em consultoria tributária estratégica.
+      Nossa equipe multidisciplinar combina expertise técnica com visão empresarial, desenvolvendo soluções personalizadas que alinham conformidade fiscal com eficiência financeira.
+    </p>
+
+    <!-- Cards estilo profissional -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="service-card group bg-white/10 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent">
+        <div class="w-20 h-20 bg-gradient-to-tr from-primary to-accent rounded-full flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
+          <!-- Substitua por SVG ou ícone profissional -->
+          <i class="fas fa-bolt text-3xl"></i>
         </div>
+        <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-500">Prontidão</h3>
+        <p class="text-white text-base mb-5">
+          Prontidão no atendimento e suporte consultivo ágil.
+        </p>
       </div>
 
-      <!-- TEXTO (abaixo no mobile, à direita no desktop) -->
-      <div class="md:w-1/2 md:pl-12 bg-white/80 backdrop-blur-md rounded-xl p-6 shadow-lg">
-        <h2 id="animated-about-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-          Sobre a TRIsolutions
-        </h2>
-
-        <p class="text-gray-700 mb-3 leading-relaxed">
-          Fundada com o propósito de transformar a complexidade tributária em vantagem competitiva, a TRIsolutions se consolidou como referência em consultoria tributária estratégica.
-        </p>
-        <p class="text-gray-700 mb-4 leading-relaxed">
-          Nossa equipe multidisciplinar combina expertise técnica com visão empresarial, desenvolvendo soluções personalizadas que alinham conformidade fiscal com eficiência financeira.
-        </p>
-
-        <div class="space-y-4">
-          <div class="flex items-start">
-            <i class="fas fa-check-circle text-primary text-2xl mt-1"></i>
-            <p class="ml-4 text-gray-700">Prontidão no atendimento e suporte consultivo ágil</p>
-          </div>
-          <div class="flex items-start">
-            <i class="fas fa-check-circle text-primary text-2xl mt-1"></i>
-            <p class="ml-4 text-gray-700">Equipe altamente qualificada e atualizada com as mudanças legislativas</p>
-          </div>
-          <div class="flex items-start">
-            <i class="fas fa-check-circle text-primary text-2xl mt-1"></i>
-            <p class="ml-4 text-gray-700">Metodologia própria de análise e planejamento tributário</p>
-          </div>
+      <!-- Card 2 -->
+      <div class="service-card group bg-white/10 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent">
+        <div class="w-20 h-20 bg-gradient-to-tr from-primary to-accent rounded-full flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
+          <!-- Substitua por SVG ou ícone profissional -->
+          <i class="fas fa-users text-3xl"></i>
         </div>
+        <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-500">Equipe</h3>
+        <p class="text-white text-base mb-5">
+          Equipe altamente qualificada e atualizada com as mudanças legislativas.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="service-card group bg-white/10 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent">
+        <div class="w-20 h-20 bg-gradient-to-tr from-primary to-accent rounded-full flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
+          <!-- Substitua por SVG ou ícone profissional -->
+          <i class="fas fa-cogs text-3xl"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-500">Metodologia</h3>
+        <p class="text-white text-base mb-5">
+          Metodologia própria de análise e planejamento tributário.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- JS do slider -->
+<!-- JavaScript para animação premium do título -->
 <script>
-  const slideImages = document.querySelectorAll("#image-slider .slide");
-  let currentSlide = 0;
+  const aboutTitleText = "Sobre a TRIsolutions.";
+  const aboutTitleElement = document.getElementById("animated-about-title");
+  let aboutAnimated = false;
 
-  if (slideImages.length > 0) {
-    slideImages[currentSlide].classList.add("opacity-100");
+  function animateAboutTitle() {
+    aboutTitleElement.innerHTML = "";
+    const words = aboutTitleText.split(" ");
+
+    words.forEach((word, index) => {
+      const span = document.createElement("span");
+      span.textContent = word; 
+      span.style.display = "inline-block";
+      span.style.marginRight = "0.25em";
+      span.style.opacity = "0";
+      span.style.transform = "translateY(15px)";
+      span.style.transition = "all 0.5s ease-out";
+
+      aboutTitleElement.appendChild(span);
+
+      setTimeout(() => {
+        span.style.opacity = "1";
+        span.style.transform = "translateY(0)";
+      }, index * 600);
+    });
   }
 
-  setInterval(() => {
-    if (slideImages.length === 0) return;
+  const aboutObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting && !aboutAnimated){
+        aboutAnimated = true;
+        animateAboutTitle();
+      }
+    });
+  }, { threshold: 0.5 });
 
-    slideImages[currentSlide].classList.remove("opacity-100");
-    slideImages[currentSlide].classList.add("opacity-0");
-
-    currentSlide = (currentSlide + 1) % slideImages.length;
-
-    slideImages[currentSlide].classList.remove("opacity-0");
-    slideImages[currentSlide].classList.add("opacity-100");
-  }, 3000);
+  aboutObserver.observe(aboutTitleElement);
 </script>
+
+<!-- Animação fadeInUp para parágrafos -->
+<style>
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease forwards;
+}
+
+.animate-fadeInUp.delay-200 {
+  animation-delay: 0.2s;
+}
+</style>
+
+
+
+<!-- Animação fadeInUp para parágrafos -->
+<style>
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease forwards;
+}
+
+.animate-fadeInUp.delay-200 {
+  animation-delay: 0.2s;
+}
+</style>
 
 
 
