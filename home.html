@@ -24,13 +24,18 @@
    @media (max-width: 768px) {
      #preloader {
        /* Força cobertura total na mobile */
-       top: 0 !important;
-       left: 0 !important;
-       right: 0 !important;
-       bottom: 0 !important;
-       width: 100vw !important;
-       height: 100vh !important;
-     }
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;      /* largura total */
+        height: 100vh;     /* altura total do viewport */
+        background: #fff;  /* ou a cor/gradiente que você estiver usando */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        overflow: hidden;  /* evita mostrar o site por baixo */
+        }
      
      #preloader img {
        max-width: 80% !important; /* Aumente um pouco para telas pequenas */
