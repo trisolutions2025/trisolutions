@@ -197,9 +197,12 @@
 
 
 <!-- Preloader -->
-<div id="preloader" class="fixed inset-0 bg-white flex items-center justify-center z-50">
-  <img src="https://i.postimg.cc/mgGrM4WT/logogif.gif" alt="Logo TRIsolutions" 
-       class="max-w-[60%] max-h-[60%] animate-zoom-in object-contain"> 
+<div id="preloader" class="fixed top-0 left-0 w-full h-screen bg-white flex items-center justify-center z-50">
+  <img 
+    src="https://i.postimg.cc/mgGrM4WT/logogif.gif" 
+    alt="Logo TRIsolutions" 
+    class="w-4/5 sm:w-2/3 md:w-1/2 animate-zoom-in object-contain mx-auto"
+  >
 </div>
 
 <script>
@@ -208,10 +211,11 @@
     setTimeout(() => {
       preloader.style.opacity = "0";
       preloader.style.transition = "opacity 2s ease";
-      setTimeout(() => preloader.style.display = "none", 2000); 
-    }, 4000); // espera a animação da logo terminar
+      setTimeout(() => preloader.style.display = "none", 2000);
+    }, 4000); // tempo de exibição do preloader
   });
 </script>
+
 
 
 
