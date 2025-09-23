@@ -30,19 +30,17 @@
   }
 
   #preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    overflow: hidden; /* impede vazamento do site */
-    overscroll-behavior: contain;
-  }
+  position: fixed;
+  inset: 0; /* cobre toda tela */
+  width: 100%;
+  height: 100%;
+  background: #fff; /* cor sólida */
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
   #preloader img {
     max-width: 250px;
@@ -215,14 +213,19 @@
 </div>
 
 <script>
-  window.addEventListener("load", () => {
-    const preloader = document.getElementById("preloader");
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  setTimeout(() => {
+    preloader.style.opacity = "0";
+    preloader.style.transition = "opacity 2s ease";
     setTimeout(() => {
-      preloader.style.opacity = "0";
-      preloader.style.transition = "opacity 2s ease";
-      setTimeout(() => preloader.style.display = "none", 2000); 
-    }, 4000); // espera a animação da logo terminar
-  });
+      preloader.style.display = "none";
+      document.documentElement.style.overflow = "auto"; // libera HTML
+      document.body.style.overflow = "auto";           // libera BODY
+    }, 2000); 
+  }, 4000); 
+});
+
 </script>
 
 
