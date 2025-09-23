@@ -19,165 +19,134 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <style>
+<style>
 
-       /* Adicione no <style> */
-   @media (max-width: 768px) {
-     #preloader {
-       /* Força cobertura total na mobile */
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;      /* largura total */
-        height: 100vh;     /* altura total do viewport */
-        background: #fff;  /* ou a cor/gradiente que você estiver usando */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        overflow: hidden;  /* evita mostrar o site por baixo */
-        }
-     
-     #preloader img {
-       max-width: 80% !important; /* Aumente um pouco para telas pequenas */
-       max-height: 80% !important;
-     }
-   }
-   
-    
-    /* Adicione isso no <style> existente */
-   html.preloader-active,
-   body.preloader-active {
-     overflow: hidden !important;
-     height: 100vh !important; /* Limita a altura à viewport */
-   }
+  /*PRELOADER*/
+  html.preloader-active,
+  body.preloader-active {
+    overflow: hidden !important;
+    height: 100vh !important; /* trava altura no viewport */
+  }
+
+  #preloader {
+  position: fixed;
+  inset: 0; /* cobre toda tela */
+  width: 100%;
+  height: 100%;
+  background: #fff; /* cor sólida */
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
-    /* Animação do zoom */
-    @keyframes zoomIn {
+  #preloader img {
+    max-width: 250px;
+    height: auto;
+    animation: zoomIn 2s ease forwards;
+  }
+
+  @media (max-width: 768px) {
+    #preloader img {
+      max-width: 80% !important;
+      max-height: 80% !important;
+    }
+  }
+
+  /* Zoom da logo */
+  @keyframes zoomIn {
     0% { transform: scale(0); opacity: 0; }
     50% { transform: scale(1.2); opacity: 1; }
     100% { transform: scale(1); opacity: 1; }
+  }
+
+  /*BASE*/
+  body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+}
+
+
+  /*SERVICES*/
+  .service-card {
+    transition: all 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .animate-delay-100 { animation-delay: 0.1s; }
+  .animate-delay-200 { animation-delay: 0.2s; }
+  .animate-delay-300 { animation-delay: 0.3s; }
+
+  /*LOGO PLACEHOLDER */
+  .logo-placeholder {
+    width: 180px;
+    height: 60px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1e3a8a;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+
+  .logo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /*ANIMAÇÕES GLOBAIs*/
+  @keyframes slideInLeft {
+    0% { transform: translateX(-50%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+
+  .slide-in-left {
+    animation: slideInLeft 4s ease-out forwards;
+  }
+
+  @keyframes slideInRight {
+    0% { transform: translateX(50%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+
+  .slide-in-right {
+    animation: slideInRight 4s ease-out forwards;
+  }
+
+  /* Logo e Menu */
+  @keyframes slideInFromRight {
+    0% { transform: translateX(100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+
+  @keyframes slideInFromLeft {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+
+  .animate-logo {
+    animation: slideInFromRight 4s ease forwards;
+  }
+
+  @media (min-width: 768px) {
+    .animate-menu-desktop {
+      animation: slideInFromLeft 4s ease forwards;
     }
-
-    .animate-zoom-in {
-    animation: zoomIn 2s ease forwards;
-    }
-
-
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    .hero-gradient {
-      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-
-    .service-card {
-      transition: all 0.3s ease;
-    }
-
-    .animate-delay-100 {
-      animation-delay: 0.1s;
-    }
-
-    .animate-delay-200 {
-      animation-delay: 0.2s;
-    }
-
-    .animate-delay-300 {
-      animation-delay: 0.3s;
-    }
-
-    .logo-placeholder {
-      width: 180px;
-      height: 60px;
-      background-color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #1e3a8a;
-      font-weight: bold;
-      border-radius: 4px;
-    }
-
-    .logo-placeholder img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    /* Animações de slide globais */
-    @keyframes slideInLeft {
-      0% {
-        transform: translateX(-50%);
-        opacity: 0;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-
-    .slide-in-left {
-      animation: slideInLeft 4s ease-out forwards;
-    }
-
-    @keyframes slideInRight {
-      0% {
-        transform: translateX(50%);
-        opacity: 0;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-
-    .slide-in-right {
-      animation: slideInRight 4s ease-out forwards;
-    }
-
-    /* Animações específicas para logo e menu */
-    @keyframes slideInFromRight {
-      0% {
-        transform: translateX(100%);
-        opacity: 0;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-
-    @keyframes slideInFromLeft {
-      0% {
-        transform: translateX(-100%);
-        opacity: 0;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-
-    .animate-logo {
-      animation: slideInFromRight 4s ease forwards;
-    }
-
-    @media (min-width: 768px) {
-      .animate-menu-desktop {
-        animation: slideInFromLeft 4s ease forwards;
-      }
-    }
-  </style>
+  }
+</style>
 
   <!-- Tailwind Custom Config -->
   <script>
@@ -226,9 +195,6 @@
    <span>Fale conosco</span>
 </a>
 
-
-
-
 <!-- Preloader -->
 <div id="preloader" class="fixed inset-0 bg-white flex items-center justify-center z-[999]">
   <img src="https://i.postimg.cc/mgGrM4WT/logogif.gif" alt="Logo TRIsolutions" 
@@ -236,20 +202,20 @@
 </div>
 
 <script>
-  window.addEventListener("load", () => {
-    const preloader = document.getElementById("preloader");
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  setTimeout(() => {
+    preloader.style.opacity = "0";
+    preloader.style.transition = "opacity 1.5s ease";
     setTimeout(() => {
-      preloader.style.opacity = "0";
-      preloader.style.transition = "opacity 2s ease";
-      setTimeout(() => preloader.style.display = "none", 2000); 
-    }, 4000); // espera a animação da logo terminar
-  });
+      preloader.style.display = "none";
+      document.documentElement.style.overflow = "auto"; // libera HTML
+      document.body.style.overflow = "auto";           // libera BODY
+    }, 1000); 
+  }, 2000); 
+});
+
 </script>
-
-
-
-
-
 
   <!-- NAVBAR -->
   <nav class="relative bg-gradient-to-r from-gray-300 via-gray-300 to-white shadow-md sticky top-0 z-50">
@@ -305,7 +271,7 @@
                     Maximizando resultados e minimizando custos através de estratégias tributárias personalizadas para o seu negócio.
                 </p>
                 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="teste.html" class="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-primary transition text-center">
+                    <a href="#contact" class="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-primary transition text-center">
                         Solicitar Consultoria
                     </a>
                     <a href="#services" class="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-primary transition text-center">
@@ -378,90 +344,89 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
- <!-- About Section Premium -->
-<section id="about" class="relative py-20 overflow-hidden">
-    <!-- Background decorativo -->
-    <div class="absolute inset-0 -z-10">
-        <div class="absolute w-96 h-96 bg-primary/50 rounded-full -top-24 -left-24 animate-blob"></div>
-        <div class="absolute w-72 h-72 bg-accent/50 rounded-full -bottom-24 -right-24 animate-blob animation-delay-2000"></div>
-        <div class="absolute w-80 h-80 bg-secondary/50 rounded-full top-1/2 left-1/3 animate-blob animation-delay-4000"></div>
-    </div>
+<!-- ABOUT -->
+<section id="about" class="relative bg-black/10 py-20 md:py-32 overflow-hidden">
+  <!-- Fundo GIF proporcional -->
+  <div class="absolute inset-0">
+    <img src="https://img.freepik.com/fotos-gratis/mao-humana-digitando-no-teclado-do-computador-a-noite-gerada-por-ia_188544-31050.jpg" alt="Fundo" class="w-full h-full object-cover object-center opacity-40">
+    <div class="absolute inset-0 bg-black/50"></div> <!-- Sobreposição para contraste -->
+  </div>
 
-    <div class="container mx-auto px-6">
-        <div class="flex flex-col md:flex-row items-center gap-12">
+  <div class="container mx-auto px-6 md:px-12 relative z-10 text-center">
+    <!-- Título animado -->
+    <h2 id="animated-about-title" class="text-4xl md:text-5xl font-bold text-white mb-8">
+      Sobre a TRIsolutions.
+    </h2>
 
-            <!-- Slide de imagens da equipe -->
-            <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in overflow-hidden rounded-xl shadow-2xl relative h-[300px] md:h-[400px]">
-                <div id="image-slider" class="w-full h-full relative">
-                    <img src="https://i.ibb.co/JN0s073/Capturar.png" alt="Slide 1" class="absolute inset-0 w-full h-full object-cover rounded-xl opacity-100 transition-opacity duration-1000">
-                    <img src="https://i.ibb.co/zXY8qXN/equipe2.jpg" alt="Slide 2" class="absolute inset-0 w-full h-full object-cover rounded-xl opacity-0 transition-opacity duration-1000">
-                    <img src="https://i.ibb.co/YtY8tkz/equipe3.jpg" alt="Slide 3" class="absolute inset-0 w-full h-full object-cover rounded-xl opacity-0 transition-opacity duration-1000">
-                </div>
-            </div>
+    <!-- Texto original da seção -->
+    <p class="text-white text-lg md:text-xl leading-relaxed mb-12 animate-fadeInUp delay-200">
+      Fundada com o propósito de transformar a complexidade tributária em vantagem competitiva, a TRIsolutions se consolidou como referência em consultoria tributária estratégica.
+      Nossa equipe multidisciplinar combina expertise técnica com visão empresarial, desenvolvendo soluções personalizadas que alinham conformidade fiscal com eficiência financeira.
+    </p>
 
-            <!-- Texto e Vantagens -->
-            <div class="md:w-1/2 md:pl-12 animate-slide-up bg-white/80 backdrop-blur-md rounded-xl p-8 shadow-lg">
-                <!-- Título animado -->
-                <h2 id="animated-about-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 tracking-tight"></h2>
-
-                <p class="text-gray-700 mb-4 leading-relaxed">
-                    Fundada com o propósito de transformar a complexidade tributária em vantagem competitiva, a TRIsolutions se consolidou como referência em consultoria tributária estratégica.
-                </p>
-                <p class="text-gray-700 mb-6 leading-relaxed">
-                    Nossa equipe multidisciplinar combina expertise técnica com visão empresarial, desenvolvendo soluções personalizadas que alinham conformidade fiscal com eficiência financeira.
-                </p>
-
-                <div class="space-y-5">
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 mt-1">
-                            <i class="fas fa-check-circle text-primary text-2xl"></i>
-                        </div>
-                        <p class="ml-4 text-gray-700 text-lg">Prontidão no atendimento e suporte consultivo ágil</p>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 mt-1">
-                            <i class="fas fa-check-circle text-primary text-2xl"></i>
-                        </div>
-                        <p class="ml-4 text-gray-700 text-lg">Equipe altamente qualificada e atualizada com as mudanças legislativas</p>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 mt-1">
-                            <i class="fas fa-check-circle text-primary text-2xl"></i>
-                        </div>
-                        <p class="ml-4 text-gray-700 text-lg">Metodologia própria de análise e planejamento tributário</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Cards estilo profissional -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="service-card group bg-gray-800/60 backdrop-blur-md p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent">
+        <div class="w-20 h-20 bg-gradient-to-tr from-primary to-accent rounded-full flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
+          <i class="fas fa-bolt text-3xl"></i>
         </div>
+        <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-500">Prontidão</h3>
+        <p class="text-white text-base mb-5">
+          Prontidão no atendimento e suporte consultivo ágil.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="service-card group bg-gray-800/60 backdrop-blur-md p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent">
+        <div class="w-20 h-20 bg-gradient-to-tr from-primary to-accent rounded-full flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
+          <i class="fas fa-users text-3xl"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-500">Equipe</h3>
+        <p class="text-white text-base mb-5">
+          Equipe altamente qualificada e atualizada com as mudanças legislativas.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="service-card group bg-gray-800/60 backdrop-blur-md p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent">
+        <div class="w-20 h-20 bg-gradient-to-tr from-primary to-accent rounded-full flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
+          <i class="fas fa-cogs text-3xl"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-500">Metodologia</h3>
+        <p class="text-white text-base mb-5">
+          Metodologia própria de análise e planejamento tributário.
+        </p>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- JavaScript para animação do título e slide de imagens -->
+<!-- JavaScript para animação premium do título -->
 <script>
-  // Animação do título
-  const aboutTitleText = "Sobre a TRIsolutions";
+  const aboutTitleText = "Sobre a TRIsolutions.";
   const aboutTitleElement = document.getElementById("animated-about-title");
   let aboutAnimated = false;
 
   function animateAboutTitle() {
-    aboutTitleElement.innerHTML = ""; // limpa o título
+    aboutTitleElement.innerHTML = "";
     const words = aboutTitleText.split(" ");
 
     words.forEach((word, index) => {
       const span = document.createElement("span");
-      span.textContent = word;
+      span.textContent = word; 
       span.style.display = "inline-block";
       span.style.marginRight = "0.25em";
       span.style.opacity = "0";
       span.style.transform = "translateY(15px)";
-      span.style.transition = "all 0.8s ease-out";
+      span.style.transition = "all 0.5s ease-out";
 
       aboutTitleElement.appendChild(span);
 
       setTimeout(() => {
         span.style.opacity = "1";
         span.style.transform = "translateY(0)";
-      }, index * 600); // delay entre palavras
+      }, index * 600);
     });
   }
 
@@ -475,24 +440,29 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.5 });
 
   aboutObserver.observe(aboutTitleElement);
-
-
-  // Slide de imagens
-  const slideImages = document.querySelectorAll("#image-slider img");
-  let currentSlide = 0;
-
-  setInterval(() => {
-    // Oculta todas as imagens
-    slideImages.forEach((img) => {
-      img.style.opacity = "0";
-    });
-
-    // Mostra a próxima
-    currentSlide = (currentSlide + 1) % slideImages.length;
-    slideImages[currentSlide].style.opacity = "1";
-  }, 3000); // muda a cada 3 segundos
 </script>
 
+<!-- Animação fadeInUp para parágrafos -->
+<style>
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease forwards;
+}
+
+.animate-fadeInUp.delay-200 {
+  animation-delay: 0.2s;
+}
+</style>
 
 <!-- Seção Responsáveis Técnicos com Cards Profissionais -->
 <section class="relative py-20 bg-gray-50" id="responsaveis">
@@ -859,7 +829,7 @@ servicesObserver.observe(servicesTitleElement);
         <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto opacity-90 animate-fade-in animate-delay-100">
             Agende uma consultoria gratuita e descubra como podemos ajudar sua empresa a economizar com estratégias tributárias inteligentes.
         </p>
-        <a href="#contact" class="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-primary transition text-center animate-slide-up animate-delay-200">
+        <a href="https://wa.me/5531991364029?text=Olá,%20gostaria%20de%20obter%20uma%20consultoria%20tributária%20para%20minha%20empresa." class="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-primary transition text-center animate-slide-up animate-delay-200">
            Solicitar consultoria gratuita
         </a>
     </div>
