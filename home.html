@@ -344,333 +344,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-<!-- ABOUT -->
-<section id="about" class="relative bg-black/10 py-20 md:py-32 overflow-hidden">
-  <!-- Fundo GIF proporcional -->
-  <div class="absolute inset-0">
-    <img src="https://i.postimg.cc/26Jg5KrN/14.png" alt="Fundo" class="w-full h-full object-cover object-center opacity-40">
-    <div class="absolute inset-0 bg-black/50"></div> <!-- Sobreposição para contraste -->
-  </div>
-
-  <div class="container mx-auto px-6 md:px-12 relative z-10 text-center">
-    <!-- Título animado -->
-    <h2 id="animated-about-title" class="text-4xl md:text-5xl font-bold text-white mb-8">
-      Sobre a TRIsolutions.
-    </h2>
-
-    <!-- Texto original da seção -->
-    <p class="text-white text-lg md:text-xl leading-relaxed mb-12 animate-fadeInUp delay-200">
-      Fundada com o propósito de transformar a complexidade tributária em vantagem competitiva, a TRIsolutions se consolidou como referência em consultoria tributária estratégica.
-      Nossa equipe multidisciplinar combina expertise técnica com visão empresarial, desenvolvendo soluções personalizadas que alinham conformidade fiscal com eficiência financeira.
-    </p>
-
-    <!-- Cards estilo profissional -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Card 1 -->
-      <div class="service-card group bg-gray-800/60 backdrop-blur-md p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent">
-        <div class="w-20 h-20 bg-gradient-to-tr from-primary to-accent rounded-full flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
-          <i class="fas fa-bolt text-3xl"></i>
-        </div>
-        <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-500">Prontidão</h3>
-        <p class="text-white text-base mb-5">
-          Prontidão no atendimento e suporte consultivo ágil.
-        </p>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="service-card group bg-gray-800/60 backdrop-blur-md p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent">
-        <div class="w-20 h-20 bg-gradient-to-tr from-primary to-accent rounded-full flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
-          <i class="fas fa-users text-3xl"></i>
-        </div>
-        <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-500">Equipe</h3>
-        <p class="text-white text-base mb-5">
-          Equipe altamente qualificada e atualizada com as mudanças legislativas.
-        </p>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="service-card group bg-gray-800/60 backdrop-blur-md p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent">
-        <div class="w-20 h-20 bg-gradient-to-tr from-primary to-accent rounded-full flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
-          <i class="fas fa-cogs text-3xl"></i>
-        </div>
-        <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-500">Metodologia</h3>
-        <p class="text-white text-base mb-5">
-          Metodologia própria de análise e planejamento tributário.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- JavaScript para animação premium do título -->
-<script>
-  const aboutTitleText = "Sobre a TRIsolutions.";
-  const aboutTitleElement = document.getElementById("animated-about-title");
-  let aboutAnimated = false;
-
-  function animateAboutTitle() {
-    aboutTitleElement.innerHTML = "";
-    const words = aboutTitleText.split(" ");
-
-    words.forEach((word, index) => {
-      const span = document.createElement("span");
-      span.textContent = word; 
-      span.style.display = "inline-block";
-      span.style.marginRight = "0.25em";
-      span.style.opacity = "0";
-      span.style.transform = "translateY(15px)";
-      span.style.transition = "all 0.5s ease-out";
-
-      aboutTitleElement.appendChild(span);
-
-      setTimeout(() => {
-        span.style.opacity = "1";
-        span.style.transform = "translateY(0)";
-      }, index * 600);
-    });
-  }
-
-  const aboutObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting && !aboutAnimated){
-        aboutAnimated = true;
-        animateAboutTitle();
-      }
-    });
-  }, { threshold: 0.5 });
-
-  aboutObserver.observe(aboutTitleElement);
-</script>
-
-<!-- Animação fadeInUp para parágrafos -->
-<style>
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fadeInUp {
-  animation: fadeInUp 1s ease forwards;
-}
-
-.animate-fadeInUp.delay-200 {
-  animation-delay: 0.2s;
-}
-</style>
-
-<!-- Seção Responsáveis Técnicos com Cards Profissionais -->
-<section class="relative py-20 bg-gray-50" id="responsaveis">
-  <!-- Bolinhas animadas no fundo -->
-  <div class="absolute inset-0 z-0 pointer-events-none">
-    <div class="absolute w-96 h-96 bg-primary/50 rounded-full -top-24 -left-24 animate-blob"></div>
-    <div class="absolute w-72 h-72 bg-accent/50 rounded-full -bottom-24 -right-24 animate-blob animation-delay-2000"></div>
-    <div class="absolute w-80 h-80 bg-secondary/50 rounded-full top-1/2 left-1/3 animate-blob animation-delay-4000"></div>
-  </div>
-
-  <div class="container mx-auto px-6 relative z-10">
-    <!-- Título animado -->
-    <h2 id="animated-rt-title" class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900"></h2>
-
-<!-- Cards dos Responsáveis Técnicos -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <!-- Card 1 -->
-      <div class="flex flex-col items-start p-6 bg-gray-400 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-300">
-        <img src="https://i.postimg.cc/Xvjr2Zwz/sauro.jpg" alt="Dr. Sauro Henrique de Almeida" class="w-24 h-24 object-cover rounded-full shadow-md mb-4" />
-        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Dr. Sauro Henrique de Almeida</h3> <!-- Tamanho da fonte aumentado -->
-        <ul class="space-y-2 text-white opacity-90 text-base"> <!-- Fonte das qualificações aumentada -->
-          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Vice-presidente da Junta Comercial de MG</li>
-          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Conselheiro do Conselho de Contribuintes do Estado de Minas Gerais</li>
-          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Presidente do SESCON/MG</li>
-        </ul>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="flex flex-col items-start p-6 bg-gray-400 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-300">
-        <img src="https://i.postimg.cc/fRwqMNm0/aleandro.png" alt="Dr. Aleandro Pinto" class="w-24 h-24 object-cover rounded-full shadow-md mb-4" />
-        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Dr. Aleandro Pinto</h3> <!-- Tamanho da fonte aumentado -->
-        <ul class="space-y-2 text-white opacity-90 text-base"> <!-- Fonte das qualificações aumentada -->
-          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Professor de direito tributário na PUC-MG</li>
-          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Mestre em direito tributário pela Universidade FUMEC</li>
-          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Autor dos livros: Lições de Direito Tributário e A Ineficácia do Direito Penal Tributário.</li>
-          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Advogado e conselheiro do Conselho de Contribuinte do Estado de Minas Gerais.</li>
-        </ul>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="flex flex-col items-start p-6 bg-gray-400 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-300">
-        <img src="https://i.postimg.cc/3RpFgS2T/poliana.png" alt="Dra. Polyany Cunha" class="w-24 h-24 object-cover rounded-full shadow-md mb-4" />
-        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Dra. Polyany Cunha</h3> <!-- Tamanho da fonte aumentado -->
-        <ul class="space-y-2 text-white opacity-90 text-base"> <!-- Fonte das qualificações aumentada -->
-          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Especialista em direito tributário e empresarial</li>
-          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Professora de pós-graduação na PUC-MG</li>
-          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Especialista em direito societário e compliance</li>
-        </ul>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="flex flex-col items-start p-6 bg-gray-400 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-300">
-        <img src="https://i.postimg.cc/gcQ6Y2Wx/antonio.jpg" alt="Dr. Antônio Cesar Ribeiro" class="w-24 h-24 object-cover rounded-full shadow-md mb-4" />
-        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Dr. Antônio Cesar Ribeiro</h3> <!-- Tamanho da fonte aumentado -->
-        <ul class="space-y-2 text-white opacity-90 text-base"> <!-- Fonte das qualificações aumentada -->
-          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Vice-presidente do conselho de contribuintes – AGE-MG (2024-2026)</li>
-          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Presidência e coordenação de sessões do CCMG</li>
-          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Elaboração de pareceres tributários com fundamento legal</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- JavaScript para animar apenas o título -->
-<script>
-  const rtTitleText = "Responsáveis Técnicos - Avaliação e Validação Jurídica";
-  const rtTitleElement = document.getElementById("animated-rt-title");
-  let rtAnimated = false;
-
-  function animateRTTitle() {
-    rtTitleElement.innerHTML = "";
-    const words = rtTitleText.split(" ");
-
-    words.forEach((word, index) => {
-      const span = document.createElement("span");
-      span.textContent = word;
-      span.style.display = "inline-block";
-      span.style.marginRight = "0.25em";
-      span.style.opacity = "0";
-      span.style.transform = "translateY(10px)";
-      span.style.transition = "all 1s ease-out";
-
-      rtTitleElement.appendChild(span);
-
-      setTimeout(() => {
-        span.style.opacity = "1";
-        span.style.transform = "translateY(0)";
-      }, index * 300);
-    });
-  }
-
-  const rtObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting && !rtAnimated){
-        rtAnimated = true;
-        animateRTTitle();
-      }
-    });
-  }, { threshold: 0.5 });
-
-  rtObserver.observe(rtTitleElement);
-</script>
-
-<!-- Seção de Contadores Circular -->
-<section id="counters" class="relative bg-cover bg-center py-20" style="background-image: url('https://i.postimg.cc/VvL4mLQG/5.png');">
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 justify-items-center">
-
-            <!-- Bloco 1 -->
-            <div class="bg-white/90 rounded-full w-64 h-64 shadow-xl flex flex-col items-center justify-center animate-counter-block">
-                <i class="fas fa-chart-line text-blue-600 text-5xl mb-3"></i>
-                <h3 class="text-3xl font-bold text-blue-600 flex items-baseline">
-                    <span class="mr-1">R$</span>
-                    <span class="counter-value text-3xl" data-target="1000000">0</span>
-                </h3>
-                <p class="text-gray-700 mt-2 text-center text-sm px-4">Apurados nos últimos 5 anos</p>
-            </div>
-
-            <!-- Bloco 2 -->
-            <div class="bg-white/90 rounded-full w-64 h-64 shadow-xl flex flex-col items-center justify-center animate-counter-block">
-                <i class="fas fa-hand-holding-dollar text-green-600 text-5xl mb-3"></i>
-                <h3 class="text-3xl font-bold text-green-600 flex items-baseline">
-                    <span class="mr-1">R$</span>
-                    <span class="counter-value" data-target="200000">0</span>
-                </h3>
-                <p class="text-gray-700 mt-2 text-center text-sm px-4">Recuperados no último ano</p>
-            </div>
-
-            <!-- Bloco 3 -->
-            <div class="bg-white/90 rounded-full w-64 h-64 shadow-xl flex flex-col items-center justify-center animate-counter-block">
-                <i class="fas fa-shield-alt text-yellow-600 text-5xl mb-3"></i>
-                <h3 class="text-3xl font-bold text-yellow-600 flex items-baseline">
-                    <span class="mr-1">R$</span>
-                    <span class="counter-value" data-target="500000">0</span>
-                </h3>
-                <p class="text-gray-700 mt-2 text-center text-sm px-4">Em ajustes de contribuições evitando recolhimentos indevidos</p>
-            </div>
-
-            <!-- Bloco 4 -->
-            <div class="bg-white/90 rounded-full w-64 h-64 shadow-xl flex flex-col items-center justify-center animate-counter-block">
-                <i class="fas fa-users text-purple-600 text-5xl mb-3"></i>
-                <h3 class="text-3xl font-bold text-purple-600">
-                    <span class="counter-value" data-target="1500">0</span>
-                </h3>
-                <p class="text-gray-700 mt-2 text-center text-sm px-4">Clientes atendidos</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Estilos e Animação -->
-<style>
-.animate-counter-block {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s ease-out;
-}
-
-.animate-counter-block.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.counter-value {
-    display: inline-block;
-    transition: all 0.3s ease-out;
-}
-</style>
-
-<!-- Script Premium de Contadores com Construção e Sequência -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const counterBlocks = document.querySelectorAll('.animate-counter-block');
-
-    const animateNumber = (el) => {
-        const target = +el.getAttribute('data-target');
-        let current = 0;
-        const increment = Math.ceil(target / 200); // velocidade do contador
-        const step = () => {
-            current += increment;
-            if(current < target){
-                el.innerText = current.toLocaleString();
-                requestAnimationFrame(step);
-            } else {
-                el.innerText = target.toLocaleString();
-            }
-        };
-        step();
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, idx) => {
-            if(entry.isIntersecting && !entry.target.classList.contains('visible')){
-                // delay incremental para construir da esquerda para direita
-                setTimeout(() => {
-                    entry.target.classList.add('visible');
-                    const counter = entry.target.querySelector('.counter-value');
-                    if(counter) animateNumber(counter);
-                }, idx * 400); 
-            }
-        });
-    }, { threshold: 0.5 });
-
-    counterBlocks.forEach(block => observer.observe(block));
-});
-</script>
-
 <!-- Services Section Premium Completo -->
 <section id="services" class="py-24 relative overflow-hidden">
     <!-- Imagem de fundo leve e overlay -->
@@ -804,6 +477,434 @@ const servicesObserver = new IntersectionObserver(entries => {
 servicesObserver.observe(servicesTitleElement);
 </script>
 
+<!-- Seção Responsáveis Técnicos com Cards Profissionais -->
+<section class="relative py-20 bg-gray-50" id="responsaveis">
+  <!-- Bolinhas animadas no fundo -->
+  <div class="absolute inset-0 z-0 pointer-events-none">
+    <div class="absolute w-96 h-96 bg-primary/50 rounded-full -top-24 -left-24 animate-blob"></div>
+    <div class="absolute w-72 h-72 bg-accent/50 rounded-full -bottom-24 -right-24 animate-blob animation-delay-2000"></div>
+    <div class="absolute w-80 h-80 bg-secondary/50 rounded-full top-1/2 left-1/3 animate-blob animation-delay-4000"></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <!-- Título animado -->
+    <h2 id="animated-rt-title" class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900"></h2>
+
+<!-- Cards dos Responsáveis Técnicos -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Card 1 -->
+      <div class="flex flex-col items-start p-6 bg-gray-400 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-300">
+        <img src="https://i.postimg.cc/Xvjr2Zwz/sauro.jpg" alt="Dr. Sauro Henrique de Almeida" class="w-24 h-24 object-cover rounded-full shadow-md mb-4" />
+        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Dr. Sauro Henrique de Almeida</h3> <!-- Tamanho da fonte aumentado -->
+        <ul class="space-y-2 text-white opacity-90 text-base"> <!-- Fonte das qualificações aumentada -->
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Vice-presidente da Junta Comercial de MG</li>
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Conselheiro do Conselho de Contribuintes do Estado de Minas Gerais</li>
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Presidente do SESCON/MG</li>
+        </ul>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="flex flex-col items-start p-6 bg-gray-400 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-300">
+        <img src="https://i.postimg.cc/fRwqMNm0/aleandro.png" alt="Dr. Aleandro Pinto" class="w-24 h-24 object-cover rounded-full shadow-md mb-4" />
+        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Dr. Aleandro Pinto</h3> <!-- Tamanho da fonte aumentado -->
+        <ul class="space-y-2 text-white opacity-90 text-base"> <!-- Fonte das qualificações aumentada -->
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Professor de direito tributário na PUC-MG</li>
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Mestre em direito tributário pela Universidade FUMEC</li>
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Autor dos livros: Lições de Direito Tributário e A Ineficácia do Direito Penal Tributário.</li>
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Advogado e conselheiro do Conselho de Contribuinte do Estado de Minas Gerais.</li>
+        </ul>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="flex flex-col items-start p-6 bg-gray-400 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-300">
+        <img src="https://i.postimg.cc/3RpFgS2T/poliana.png" alt="Dra. Polyany Cunha" class="w-24 h-24 object-cover rounded-full shadow-md mb-4" />
+        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Dra. Polyany Cunha</h3> <!-- Tamanho da fonte aumentado -->
+        <ul class="space-y-2 text-white opacity-90 text-base"> <!-- Fonte das qualificações aumentada -->
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Especialista em direito tributário e empresarial</li>
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Professora de pós-graduação na PUC-MG</li>
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Especialista em direito societário e compliance</li>
+        </ul>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="flex flex-col items-start p-6 bg-gray-400 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-300">
+        <img src="https://i.postimg.cc/gcQ6Y2Wx/antonio.jpg" alt="Dr. Antônio Cesar Ribeiro" class="w-24 h-24 object-cover rounded-full shadow-md mb-4" />
+        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Dr. Antônio Cesar Ribeiro</h3> <!-- Tamanho da fonte aumentado -->
+        <ul class="space-y-2 text-white opacity-90 text-base"> <!-- Fonte das qualificações aumentada -->
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Vice-presidente do conselho de contribuintes – AGE-MG (2024-2026)</li>
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Presidência e coordenação de sessões do CCMG</li>
+          <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Elaboração de pareceres tributários com fundamento legal</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JavaScript para animar apenas o título -->
+<script>
+  const rtTitleText = "Responsáveis Técnicos - Avaliação e Validação Jurídica";
+  const rtTitleElement = document.getElementById("animated-rt-title");
+  let rtAnimated = false;
+
+  function animateRTTitle() {
+    rtTitleElement.innerHTML = "";
+    const words = rtTitleText.split(" ");
+
+    words.forEach((word, index) => {
+      const span = document.createElement("span");
+      span.textContent = word;
+      span.style.display = "inline-block";
+      span.style.marginRight = "0.25em";
+      span.style.opacity = "0";
+      span.style.transform = "translateY(10px)";
+      span.style.transition = "all 1s ease-out";
+
+      rtTitleElement.appendChild(span);
+
+      setTimeout(() => {
+        span.style.opacity = "1";
+        span.style.transform = "translateY(0)";
+      }, index * 300);
+    });
+  }
+
+  const rtObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting && !rtAnimated){
+        rtAnimated = true;
+        animateRTTitle();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  rtObserver.observe(rtTitleElement);
+</script>
+
+
+
+
+
+<!-- ================= POPUP CONSULTORIA ================= -->
+<div id="consultoria-popup" 
+     class="fixed inset-0 flex items-center justify-center bg-black/40 hidden z-[9999]">
+  
+  <div class="relative rounded-2xl shadow-2xl p-8 w-[90%] max-w-md transform scale-90 opacity-0 animate-popup overflow-hidden">
+
+    <!-- Fundo com sua imagem GIF -->
+    <div class="absolute inset-0 bg-[url('https://i.postimg.cc/02SKr1kc/logo2.png')] bg-cover bg-center"></div>
+    <!-- Overlay para contraste -->
+    <div class="absolute inset-0 bg-black/80"></div>
+
+    <!-- Conteúdo -->
+    <div class="relative z-10 text-white">
+      
+      <!-- Botão Fechar -->
+      <button id="close-popup" 
+              class="absolute top-3 right-3 text-gray-300 hover:text-red-400 text-xl font-bold z-20">
+        &times;
+      </button>
+
+      <!-- Ícone SVG (Exclamação em círculo branco) -->
+      <div class="flex justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+             class="h-14 w-14 text-white" 
+             viewBox="0 0 24 24" fill="white">
+          <circle cx="12" cy="12" r="10" fill="white"/>
+          <rect x="11" y="6" width="2" height="8" fill="black"/>
+          <rect x="11" y="16" width="2" height="2" fill="black"/>
+        </svg>
+      </div>
+
+      <!-- Título -->
+      <h3 class="text-xl font-bold text-center mb-3">
+        Você Acaba De Ganhar Uma Consultoria Gratuita para sua Empresa!
+      </h3>
+
+      <!-- Texto -->
+      <p class="text-center mb-6 text-base">
+        Aproveite esta oportunidade exclusiva e fale agora com um especialista no nosso WhatsApp.
+      </p>
+      
+      <!-- Botão WhatsApp -->
+      <a href="https://wa.me/5531991364029?text=Olá,%20gostaria%20de%20aproveitar%20a%20consultoria%20gratuita%20que%20acabei%20de%20ganhar." 
+         target="_blank"
+         class="block text-center bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg transition font-semibold">
+        Falar no WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= CSS ANIMAÇÃO ================= -->
+<style>
+@keyframes popupAnimation {
+  0% { opacity: 0; transform: scale(0.8) translateY(40px); }
+  60% { opacity: 1; transform: scale(1.05) translateY(0); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+.animate-popup {
+  animation: popupAnimation 0.7s ease forwards;
+}
+</style>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("consultoria-popup");
+  const closeBtn = document.getElementById("close-popup");
+  const countersSection = document.getElementById("counters");
+  let shown = false;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting && !shown){
+        shown = true;
+        popup.classList.remove("hidden");
+      }
+    });
+  }, { threshold: 0.5 });
+
+  if(countersSection) observer.observe(countersSection);
+
+  closeBtn.addEventListener("click", () => {
+    popup.classList.add("hidden");
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Seção de Contadores Circular -->
+<section id="counters" class="relative bg-cover bg-center py-20" style="background-image: url('https://i.postimg.cc/VvL4mLQG/5.png');">
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 justify-items-center">
+
+            <!-- Bloco 1 -->
+            <div class="bg-white/90 rounded-full w-64 h-64 shadow-xl flex flex-col items-center justify-center animate-counter-block">
+                <i class="fas fa-chart-line text-blue-600 text-5xl mb-3"></i>
+                <h3 class="text-3xl font-bold text-blue-600 flex items-baseline">
+                    <span class="mr-1">R$</span>
+                    <span class="counter-value text-3xl" data-target="1000000">0</span>
+                </h3>
+                <p class="text-gray-700 mt-2 text-center text-sm px-4">Apurados nos últimos 5 anos</p>
+            </div>
+
+            <!-- Bloco 2 -->
+            <div class="bg-white/90 rounded-full w-64 h-64 shadow-xl flex flex-col items-center justify-center animate-counter-block">
+                <i class="fas fa-hand-holding-dollar text-green-600 text-5xl mb-3"></i>
+                <h3 class="text-3xl font-bold text-green-600 flex items-baseline">
+                    <span class="mr-1">R$</span>
+                    <span class="counter-value" data-target="200000">0</span>
+                </h3>
+                <p class="text-gray-700 mt-2 text-center text-sm px-4">Recuperados no último ano</p>
+            </div>
+
+            <!-- Bloco 3 -->
+            <div class="bg-white/90 rounded-full w-64 h-64 shadow-xl flex flex-col items-center justify-center animate-counter-block">
+                <i class="fas fa-shield-alt text-yellow-600 text-5xl mb-3"></i>
+                <h3 class="text-3xl font-bold text-yellow-600 flex items-baseline">
+                    <span class="mr-1">R$</span>
+                    <span class="counter-value" data-target="500000">0</span>
+                </h3>
+                <p class="text-gray-700 mt-2 text-center text-sm px-4">Em ajustes de contribuições evitando recolhimentos indevidos</p>
+            </div>
+
+            <!-- Bloco 4 -->
+            <div class="bg-white/90 rounded-full w-64 h-64 shadow-xl flex flex-col items-center justify-center animate-counter-block">
+                <i class="fas fa-users text-purple-600 text-5xl mb-3"></i>
+                <h3 class="text-3xl font-bold text-purple-600">
+                    <span class="counter-value" data-target="1500">0</span>
+                </h3>
+                <p class="text-gray-700 mt-2 text-center text-sm px-4">Clientes atendidos</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Estilos e Animação -->
+<style>
+.animate-counter-block {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+}
+
+.animate-counter-block.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.counter-value {
+    display: inline-block;
+    transition: all 0.3s ease-out;
+}
+</style>
+
+<!-- Script Premium de Contadores com Construção e Sequência -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const counterBlocks = document.querySelectorAll('.animate-counter-block');
+
+    const animateNumber = (el) => {
+        const target = +el.getAttribute('data-target');
+        let current = 0;
+        const increment = Math.ceil(target / 200); // velocidade do contador
+        const step = () => {
+            current += increment;
+            if(current < target){
+                el.innerText = current.toLocaleString();
+                requestAnimationFrame(step);
+            } else {
+                el.innerText = target.toLocaleString();
+            }
+        };
+        step();
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, idx) => {
+            if(entry.isIntersecting && !entry.target.classList.contains('visible')){
+                // delay incremental para construir da esquerda para direita
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                    const counter = entry.target.querySelector('.counter-value');
+                    if(counter) animateNumber(counter);
+                }, idx * 400); 
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counterBlocks.forEach(block => observer.observe(block));
+});
+</script>
+
+<!-- ABOUT -->
+<section id="about" class="relative bg-black/10 py-20 md:py-32 overflow-hidden">
+  <!-- Fundo GIF proporcional -->
+  <div class="absolute inset-0">
+    <img src="https://i.postimg.cc/26Jg5KrN/14.png" alt="Fundo" class="w-full h-full object-cover object-center opacity-40">
+    <div class="absolute inset-0 bg-black/50"></div> <!-- Sobreposição para contraste -->
+  </div>
+
+  <div class="container mx-auto px-6 md:px-12 relative z-10 text-center">
+    <!-- Título animado -->
+    <h2 id="animated-about-title" class="text-4xl md:text-5xl font-bold text-white mb-8">
+      Sobre a TRIsolutions.
+    </h2>
+
+    <!-- Texto original da seção -->
+    <p class="text-white text-lg md:text-xl leading-relaxed mb-12 animate-fadeInUp delay-200">
+      Fundada com o propósito de transformar a complexidade tributária em vantagem competitiva, a TRIsolutions se consolidou como referência em consultoria tributária estratégica.
+      Nossa equipe multidisciplinar combina expertise técnica com visão empresarial, desenvolvendo soluções personalizadas que alinham conformidade fiscal com eficiência financeira.
+    </p>
+
+    <!-- Cards estilo profissional -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="service-card group bg-gray-800/60 backdrop-blur-md p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent">
+        <div class="w-20 h-20 bg-gradient-to-tr from-primary to-accent rounded-full flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
+          <i class="fas fa-bolt text-3xl"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-500">Prontidão</h3>
+        <p class="text-white text-base mb-5">
+          Prontidão no atendimento e suporte consultivo ágil.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="service-card group bg-gray-800/60 backdrop-blur-md p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent">
+        <div class="w-20 h-20 bg-gradient-to-tr from-primary to-accent rounded-full flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
+          <i class="fas fa-users text-3xl"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-500">Equipe</h3>
+        <p class="text-white text-base mb-5">
+          Equipe altamente qualificada e atualizada com as mudanças legislativas.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="service-card group bg-gray-800/60 backdrop-blur-md p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent">
+        <div class="w-20 h-20 bg-gradient-to-tr from-primary to-accent rounded-full flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
+          <i class="fas fa-cogs text-3xl"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-500">Metodologia</h3>
+        <p class="text-white text-base mb-5">
+          Metodologia própria de análise e planejamento tributário.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JavaScript para animação premium do título -->
+<script>
+  const aboutTitleText = "Sobre a TRIsolutions.";
+  const aboutTitleElement = document.getElementById("animated-about-title");
+  let aboutAnimated = false;
+
+  function animateAboutTitle() {
+    aboutTitleElement.innerHTML = "";
+    const words = aboutTitleText.split(" ");
+
+    words.forEach((word, index) => {
+      const span = document.createElement("span");
+      span.textContent = word; 
+      span.style.display = "inline-block";
+      span.style.marginRight = "0.25em";
+      span.style.opacity = "0";
+      span.style.transform = "translateY(15px)";
+      span.style.transition = "all 0.5s ease-out";
+
+      aboutTitleElement.appendChild(span);
+
+      setTimeout(() => {
+        span.style.opacity = "1";
+        span.style.transform = "translateY(0)";
+      }, index * 600);
+    });
+  }
+
+  const aboutObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting && !aboutAnimated){
+        aboutAnimated = true;
+        animateAboutTitle();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  aboutObserver.observe(aboutTitleElement);
+</script>
+
+<!-- Animação fadeInUp para parágrafos -->
+<style>
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease forwards;
+}
+
+.animate-fadeInUp.delay-200 {
+  animation-delay: 0.2s;
+}
+</style>
 <!-- CTA Section Estilizada -->
 <section class="relative py-24 bg-gradient-to-r from-blue-900 to-blue-700 text-white overflow-hidden" id="contact">
     <!-- Elementos decorativos -->
@@ -841,12 +942,21 @@ servicesObserver.observe(servicesTitleElement);
   <div class="container mx-auto px-6">
     <div class="flex flex-col md:flex-row justify-between">
 
-      <!-- Logo e descrição -->
+      <!-- Logo, redes e descrição -->
       <div class="mb-8 md:mb-0">
-        <div class="mb-4">
+        <div class="flex items-center gap-4 mb-4">
           <span class="text-5xl font-semibold text-white animate-logo" style="font-family: 'Cinzel', serif;">
             TRIsolutions
           </span>
+          <!-- Ícones sociais -->
+          <div class="flex gap-3">
+            <a href="https://www.instagram.com/_trisolutions_/" target="_blank" class="text-pink-500 hover:text-pink-400 text-2xl transition">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/5531991364029?text=Olá,%20gostaria%20de%20obter%20uma%20consultoria%20tributária%20para%20minha%20empresa." target="_blank" class="text-green-500 hover:text-green-400 text-2xl transition">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
         </div>
         <p class="text-gray-400 max-w-xs">
           Especialistas em soluções tributárias estratégicas para empresas de todos os portes e segmentos.
@@ -906,5 +1016,8 @@ servicesObserver.observe(servicesTitleElement);
     });
   });
 </script>
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
 </body>
 </html>
