@@ -478,12 +478,12 @@ servicesObserver.observe(servicesTitleElement);
 </script>
 
 <!-- Seção Responsáveis Técnicos com Cards Profissionais -->
-<section class="relative py-20 bg-gray-50" id="responsaveis">
+<section class="relative py-20 bg-gray-50 overflow-hidden" id="responsaveis">
   <!-- Bolinhas animadas no fundo -->
   <div class="absolute inset-0 z-0 pointer-events-none">
-    <div class="absolute w-96 h-96 bg-primary/50 rounded-full -top-24 -left-24 animate-blob"></div>
-    <div class="absolute w-72 h-72 bg-accent/50 rounded-full -bottom-24 -right-24 animate-blob animation-delay-2000"></div>
-    <div class="absolute w-80 h-80 bg-secondary/50 rounded-full top-1/2 left-1/3 animate-blob animation-delay-4000"></div>
+    <div class="absolute w-96 h-96 bg-primary/50 rounded-full -top-24 left-0 animate-blob"></div>
+    <div class="absolute w-72 h-72 bg-accent/50 rounded-full -bottom-24 right-0 animate-blob animation-delay-2000"></div>
+    <div class="absolute w-80 h-80 bg-secondary/50 rounded-full top-1/2 left-1/2 -translate-x-1/2 animate-blob animation-delay-4000"></div>
   </div>
 
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full max-w-full">
@@ -629,7 +629,7 @@ servicesObserver.observe(servicesTitleElement);
       <a href="https://wa.me/5531991364029?text=Olá,%20gostaria%20de%20aproveitar%20a%20consultoria%20gratuita%20que%20acabei%20de%20ganhar." 
          target="_blank"
          class="block text-center bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg transition font-semibold">
-        CONSULTORIA GRATUITA
+        CONSULTURIA GRATUITA
       </a>
     </div>
   </div>
@@ -945,13 +945,13 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="flex flex-col md:flex-row justify-between">
 
       <!-- Logo, redes e descrição -->
-      <div class="mb-8 md:mb-0">
-        <div class="flex flex-col sm:flex-row sm:items-center sm:gap-4 mb-4">
+      <div class="mb-8 md:mb-0 md:pr-12">
+        <div class="flex flex-col items-center gap-3 mb-4 text-center">
           <span class="text-4xl sm:text-5xl font-semibold text-white animate-logo" style="font-family: 'Cinzel', serif;">
             TRIsolutions
           </span>
           <!-- Ícones sociais -->
-          <div class="flex gap-3 mt-2 sm:mt-0">
+          <div class="flex gap-3">
             <a href="https://www.instagram.com/_trisolutions_/" target="_blank" 
                class="text-pink-500 hover:text-pink-400 text-3xl transition">
               <i class="fab fa-instagram"></i>
@@ -962,13 +962,13 @@ document.addEventListener('DOMContentLoaded', () => {
             </a>
           </div>
         </div>
-        <p class="text-gray-400 max-w-xs">
+        <p class="text-gray-400 max-w-xs text-center md:text-left">
           Especialistas em soluções tributárias estratégicas para empresas de todos os portes e segmentos.
         </p>
       </div>
 
       <!-- Links -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 w-full">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 w-full text-center md:text-left">
 
         <!-- Serviços -->
         <div>
@@ -1022,4 +1022,5 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
 
