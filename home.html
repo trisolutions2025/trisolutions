@@ -256,93 +256,175 @@ window.addEventListener("load", () => {
     </div>
   </nav>
 
-<!-- Hero Section -->
-<section id="home" 
-    class="relative bg-cover bg-center text-white py-20 md:py-32 transition-all duration-1000" 
-    style="background-image: url('https://i.postimg.cc/7YhXR6Nb/8.png');">
-    
-      <div class="container mx-auto px-4 sm:px-6 sm:px-6 relative z-10 w-full max-w-full">
-        <div class="flex flex-col md:flex-row items-center bg-black/70 p-6 rounded-lg">
-            <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in">
-                <!-- Título animado -->
-                <h1 id="animated-hero-title" class="text-4xl md:text-5xl font-bold mb-6"></h1>
 
-                <p class="text-xl mb-8 opacity-90">
-                    Maximizando resultados e minimizando custos através de estratégias tributárias personalizadas para o seu negócio.
-                </p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#contact" class="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-primary transition text-center">
-                        Solicitar Consultoria
-                    </a>
-                    <a href="#services" class="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-primary transition text-center">
-                        Nossos Serviços
-                    </a>
-                </div>
-            </div>
+
+
+
+
+        <!-- Google Fonts: Cinzel -->
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
+        <!-- Hero Section Premium -->
+        <section id="home" 
+            class="relative bg-cover bg-center text-black py-20 md:py-32 transition-all duration-1000" 
+            style="background-image: url('https://i.postimg.cc/7YhXR6Nb/8.png');">
+            
+          <!-- Overlay leve + desfoque do fundo -->
+          <div class="absolute inset-0 bg-black/20 backdrop-blur-sm z-0"></div>
+
+          <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <div class="flex flex-col items-center text-center">
+
+              <!-- Título animado -->
+              <h1 id="animated-hero-title" class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight" 
+                  style="font-family: 'Cinzel', serif;"></h1>
+
+              <!-- Subtítulo animado -->
+              <p id="hero-subtitle" 
+                class="text-lg md:text-2xl mb-10 max-w-3xl opacity-0 transform translate-y-5 transition-all duration-1000"
+                style="font-family: 'Cinzel', serif; font-weight: 700;">
+                A TRIsolutions transforma desafios tributários em resultados concretos, unindo experiência jurídica, visão estratégica e inovação tecnológica.
+              </p>
+
+              <!-- Mini-cards Missão, Valores, Tecnologia -->
+              <div id="hero-cards" class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 w-full max-w-5xl md:gap-10 
+                          overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-4 md:pb-0">
+                
+                <!-- Card Missão -->
+        <div class="hero-card min-w-[80%] md:min-w-0 bg-white/60 backdrop-blur-md p-8 rounded-2xl shadow-lg 
+                    opacity-0 transform translate-y-6 transition-all duration-1000 snap-center">
+          <div class="flex items-center justify-center w-16 h-16 mb-5 rounded-full 
+                      bg-gradient-to-tr from-primary to-accent shadow-lg text-white">
+            <i class="fas fa-bullseye text-3xl"></i>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-bold mb-3 text-black" style="font-family: 'Cinzel', serif;">
+            Missão
+          </h3>
+          <p class="text-base md:text-lg text-black opacity-90 leading-relaxed">
+            Garantir segurança jurídica e eficiência tributária para empresas de todos os portes, 
+            oferecendo soluções personalizadas que fortalecem a competitividade e sustentabilidade dos negócios.
+          </p>
         </div>
+
+        <!-- Card Valores -->
+        <div class="hero-card min-w-[80%] md:min-w-0 bg-white/60 backdrop-blur-md p-8 rounded-2xl shadow-lg 
+                    opacity-0 transform translate-y-6 transition-all duration-1000 snap-center">
+          <div class="flex items-center justify-center w-16 h-16 mb-5 rounded-full 
+                      bg-gradient-to-tr from-primary to-accent shadow-lg text-white">
+            <i class="fas fa-handshake text-3xl"></i>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-bold mb-3 text-black" style="font-family: 'Cinzel', serif;">
+            Valores
+          </h3>
+          <p class="text-base md:text-lg text-black opacity-90 leading-relaxed">
+            Atuar com ética, transparência e comprometimento absoluto, cultivando relações de confiança 
+            de longo prazo e assegurando a conformidade em todas as etapas dos processos tributários.
+          </p>
+        </div>
+
+        <!-- Card Tecnologia -->
+        <div class="hero-card min-w-[80%] md:min-w-0 bg-white/60 backdrop-blur-md p-8 rounded-2xl shadow-lg 
+                    opacity-0 transform translate-y-6 transition-all duration-1000 snap-center">
+          <div class="flex items-center justify-center w-16 h-16 mb-5 rounded-full 
+                      bg-gradient-to-tr from-primary to-accent shadow-lg text-white">
+            <i class="fas fa-microchip text-3xl"></i>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-bold mb-3 text-black" style="font-family: 'Cinzel', serif;">
+            Tecnologia
+          </h3>
+          <p class="text-base md:text-lg text-black opacity-90 leading-relaxed">
+            Utilizamos inteligência de dados e ferramentas avançadas para mapear oportunidades de economia tributária, 
+            garantindo agilidade, precisão e tomadas de decisão embasadas em análises sólidas.
+          </p>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- JavaScript para animação premium do título -->
+<!-- Animação do título, subtítulo e cards -->
 <script>
   const heroTitleText = "Soluções Tributárias Inteligentes";
   const heroTitleElement = document.getElementById("animated-hero-title");
-  let heroAnimated = false;
+  const heroSubtitle = document.getElementById("hero-subtitle");
+  const heroCards = document.querySelectorAll(".hero-card");
 
   function animateHeroTitle() {
-    heroTitleElement.innerHTML = ""; // limpa o título
-    const words = heroTitleText.split(" "); // separar por palavras
+    heroTitleElement.innerHTML = ""; 
+    const words = heroTitleText.split(" "); 
 
     words.forEach((word, index) => {
       const span = document.createElement("span");
       span.textContent = word;
-      span.style.display = "inline-block"; // evita quebra da palavra
-      span.style.marginRight = "0.25em"; // espaçamento entre palavras
+      span.style.display = "inline-block";
+      span.style.marginRight = "0.4em";
       span.style.opacity = "0";
       span.style.transform = "translateY(15px)";
-      span.style.transition = "all 0.5s ease-out"; // animação suave
-
+      span.style.transition = "all 0.6s ease-out";
+      span.style.fontFamily = "'Cinzel', serif"; // garante a fonte na animação também
       heroTitleElement.appendChild(span);
 
       setTimeout(() => {
         span.style.opacity = "1";
         span.style.transform = "translateY(0)";
-      }, index * 600); // delay entre palavras
+      }, index * 500);
+    });
+
+    // Subtítulo aparece depois do título
+    setTimeout(() => {
+      heroSubtitle.classList.remove("opacity-0", "translate-y-5");
+      heroSubtitle.classList.add("opacity-100", "translate-y-0");
+    }, words.length * 500 - 400);
+
+    // Cards aparecem em sequência
+    heroCards.forEach((card, i) => {
+      setTimeout(() => {
+        card.classList.remove("opacity-0", "translate-y-6");
+        card.classList.add("opacity-100", "translate-y-0");
+      }, (words.length * 500) + i * 600);
     });
   }
 
-  // Observer para ativar a animação ao chegar na tela
-  const heroObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting && !heroAnimated){
-        heroAnimated = true;
-        animateHeroTitle();
-      }
-    });
-  }, { threshold: 0.5 });
-
-  heroObserver.observe(heroTitleElement);
+  // 🚀 Dispara depois do preloader
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      animateHeroTitle();
+    }, 2000); 
+  });
 </script>
 
-
-<!-- Script do Slideshow -->
+<!-- Slideshow de fundo -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-    const hero = document.getElementById("home");
-    const images = [
-        "https://i.postimg.cc/PJ1Rjzt8/8.png", 
-        "https://i.postimg.cc/L5CDXKmH/6.png",
-        "https://i.postimg.cc/T2CCQmgZ/7.png"
-        
-    ];
-    let index = 0;
+  const hero = document.getElementById("home");
+  const images = [
+    "https://i.postimg.cc/7YhXR6Nb/8.png", 
+    "https://i.postimg.cc/zG9dKrKv/1.jpg",
+    "https://i.postimg.cc/WzSMhkLL/19.png"
+  ];
+  let index = 0;
 
-    setInterval(() => {
-        index = (index + 1) % images.length;
-        hero.style.backgroundImage = `url('${images[index]}')`;
-    }, 5000); // troca a cada 5 segundos
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    hero.style.backgroundImage = `url('${images[index]}')`;
+  }, 6000); 
 });
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- Services Section Premium Completo -->
 <section id="services" class="py-24 relative overflow-hidden">
@@ -351,86 +433,86 @@ document.addEventListener("DOMContentLoaded", () => {
         <img src="https://i.postimg.cc/Kj6KQJNP/13.png" 
              alt="Fundo Tecnológico" 
              class="w-full h-full object-cover " />
-        <div class="absolute inset-0 bg-gray-100/70"></div> <!-- overlay transparente -->
+        <div class="absolute inset-0 bg-gray-100/50"></div> <!-- overlay transparente -->
     </div>
 
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full max-w-full">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full max-w-full">
         <!-- Título Animado -->
         <div class="text-center mb-20">
             <h2 id="animated-services-title" class="text-3xl md:text-5xl font-bold text-gray-800 mb-4"></h2>
-            <p class="text-gray-600 max-w-3xl mx-auto text-lg">Especializados em soluções tributárias estratégicas para otimizar seus resultados financeiros.</p>
+            <p class="text-black max-w-3xl mx-auto text-lg">Especializados em soluções tributárias estratégicas para otimizar seus resultados financeiros.</p>
         </div>
 
         <!-- Grid de Serviços -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 w-full">
 
             <!-- Card 1 -->
-            <div class="service-card group bg-gray-300 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent animate-slide-up animate-delay-100">
+            <div class="service-card group bg-gray-400 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent animate-slide-up animate-delay-100">
                 <div class="w-20 h-20 bg-gradient-to-tr from-primary to-accent rounded-full flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
                     <i class="fas fa-file-invoice-dollar text-3xl"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800 mb-4 group-hover:text-primary transition-colors duration-500">Simples Nacional</h3>
-                <p class="text-gray-700 mb-5 text-base">Identificamos tributos pagos em excesso e realizamos a recuperação dos valores de forma segura e eficiente. Restituímos diretamente no caixa da sua empresa, ajudando a melhorar seu fluxo financeiro rapidamente.</p>
+                <h3 class="text-2xl font-bold text-black mb-4 group-hover:text-primary transition-colors duration-500">Simples Nacional</h3>
+                <p class="text-black mb-5 text-base">Identificamos tributos pagos em excesso e realizamos a recuperação dos valores de forma segura e eficiente. Restituímos diretamente no caixa da sua empresa, ajudando a melhorar seu fluxo financeiro rapidamente.</p>
                 <a href="simples.html" class="text-primary font-semibold hover:text-secondary transition flex items-center text-lg">
                     Saiba mais <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
 
             <!-- Card 2 -->
-            <div class="service-card group bg-gray-300 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent animate-slide-up animate-delay-200">
+            <div class="service-card group bg-gray-400 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent animate-slide-up animate-delay-200">
                 <div class="w-20 h-20 bg-gradient-to-tr from-primary to-accent rounded-full flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
                     <i class="fas fa-hand-holding-usd text-3xl"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800 mb-4 group-hover:text-primary transition-colors duration-500">Previdenciário</h3>
-                <p class="text-gray-700 mb-5 text-base">Recupere valores pagos indevidamente ao INSS e fortaleça o caixa da sua empresa. Identificamos créditos previdenciários esquecidos ou não aproveitados nos últimos anos e transformamos esse direito em economia real e legal para o seu negócio.</p>
+                <h3 class="text-2xl font-bold text-black mb-4 group-hover:text-primary transition-colors duration-500">Previdenciário</h3>
+                <p class="text-black mb-5 text-base">Recupere valores pagos indevidamente ao INSS e fortaleça o caixa da sua empresa. Identificamos créditos previdenciários esquecidos ou não aproveitados nos últimos anos e transformamos esse direito em economia real e legal para o seu negócio.</p>
                 <a href="previdenciario.html" class="text-primary font-semibold hover:text-secondary transition flex items-center text-lg">
                     Saiba mais <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
 
             <!-- Card 3 -->
-            <div class="service-card group bg-gray-300 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent animate-slide-up animate-delay-300">
+            <div class="service-card group bg-gray-400 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent animate-slide-up animate-delay-300">
                 <div class="w-20 h-20 bg-gradient-to-tr from-primary to-accent rounded-full flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
                     <i class="fas fa-user-shield text-3xl"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800 mb-4 group-hover:text-primary transition-colors duration-500">Subvenção</h3>
-                <p class="text-gray-700 mb-5 text-base">Reduza legalmente o IRPJ e a CSLL usando benefícios fiscais de ICMS. Saiba como sua empresa pode pagar menos impostos com segurança!</p>
+                <h3 class="text-2xl font-bold text-black mb-4 group-hover:text-primary transition-colors duration-500">Subvenção</h3>
+                <p class="text-black mb-5 text-base">Reduza legalmente o IRPJ e a CSLL usando benefícios fiscais de ICMS. Saiba como sua empresa pode pagar menos impostos com segurança!</p>
                 <a href="subvencao.html" class="text-primary font-semibold hover:text-secondary transition flex items-center text-lg">
                     Saiba mais <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
 
             <!-- Card 4 -->
-            <div class="service-card group bg-gray-300 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent animate-slide-up animate-delay-100">
+            <div class="service-card group bg-gray-400 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent animate-slide-up animate-delay-100">
                 <div class="w-20 h-20 bg-gradient-to-tr from-primary to-accent rounded-full flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
                     <i class="fas fa-percentage text-3xl"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800 mb-4 group-hover:text-primary transition-colors duration-500">Apuração ST</h3>
-                <p class="text-gray-700 mb-5 text-base">Descubra como identificar e corrigir falhas na segregação de impostos que podem estar aumentando a carga tributária da sua empresa. Uma análise especializada pode gerar economia significativa e garantir conformidade com a legislação.</p>
+                <h3 class="text-2xl font-bold text-black mb-4 group-hover:text-primary transition-colors duration-500">Apuração ST</h3>
+                <p class="text-black mb-5 text-base">Descubra como identificar e corrigir falhas na segregação de impostos que podem estar aumentando a carga tributária da sua empresa. Uma análise especializada pode gerar economia significativa e garantir conformidade com a legislação.</p>
                 <a href="apuracaost.html" class="text-primary font-semibold hover:text-secondary transition flex items-center text-lg">
                     Saiba mais <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
 
             <!-- Card 5 -->
-            <div class="service-card group bg-gray-300 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent animate-slide-up animate-delay-200">
+            <div class="service-card group bg-gray-400 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent animate-slide-up animate-delay-200">
                 <div class="w-20 h-20 bg-gradient-to-tr from-primary to-accent rounded-full flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
                     <i class="fas fa-balance-scale text-3xl"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800 mb-4 group-hover:text-primary transition-colors duration-500">Negociação de Passivo</h3>
-                <p class="text-gray-700 mb-5 text-base">Negocie suas dívidas com até 100% de desconto em juros e multas! Condições especiais diretamente com a PGFN, com parcelamento em até 145 vezes e planos personalizados conforme a capacidade de pagamento da sua empresa.</p>
+                <h3 class="text-2xl font-bold text-black mb-4 group-hover:text-primary transition-colors duration-500">Negociação de Passivo</h3>
+                <p class="text-black mb-5 text-base">Negocie suas dívidas com até 100% de desconto em juros e multas! Condições especiais diretamente com a PGFN, com parcelamento em até 145 vezes e planos personalizados conforme a capacidade de pagamento da sua empresa.</p>
                 <a href="negociacaopassivo.html" class="text-primary font-semibold hover:text-secondary transition flex items-center text-lg">
                     Saiba mais <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
             
             <!-- Card 6 -->
-            <div class="service-card group bg-gray-300 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent animate-slide-up animate-delay-300">
+            <div class="service-card group bg-gray-400 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 hover:scale-105 border border-transparent animate-slide-up animate-delay-300">
                 <div class="w-20 h-20 bg-gradient-to-tr from-primary to-accent rounded-full flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
                     <i class="fas fa-gavel text-3xl"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800 mb-4 group-hover:text-primary transition-colors duration-500">Alíquota Zero - Lei 192</h3>
-                <p class="text-gray-700 mb-5 text-base">Aplicação estratégica da alíquota zero conforme Lei 192, reduzindo significativamente a carga tributária.</p>
+                <h3 class="text-2xl font-bold text-black mb-4 group-hover:text-primary transition-colors duration-500">Alíquota Zero - Lei 192</h3>
+                <p class="text-black mb-5 text-base">Aplicação estratégica da alíquota zero conforme Lei 192, reduzindo significativamente a carga tributária.</p>
                 <a href="aliquotazero.html" class="text-primary font-semibold hover:text-secondary transition flex items-center text-lg">
                     Saiba mais <i class="fas fa-arrow-right ml-2"></i>
                 </a>
@@ -492,11 +574,11 @@ servicesObserver.observe(servicesTitleElement);
 
 <!-- Cards dos Responsáveis Técnicos -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 w-full">
-      <!-- Card 1 -->
+          <!-- Card 1 -->
       <div class="flex flex-col items-start p-6 bg-gray-400 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-300">
         <img src="https://i.postimg.cc/Xvjr2Zwz/sauro.jpg" alt="Dr. Sauro Henrique de Almeida" class="w-24 h-24 object-cover rounded-full shadow-md mb-4 max-w-full" />
-        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Dr. Sauro Henrique de Almeida</h3> <!-- Tamanho da fonte aumentado -->
-        <ul class="space-y-2 text-white opacity-90 text-base"> <!-- Fonte das qualificações aumentada -->
+        <h3 class="text-2xl font-semibold mb-4 text-black">Dr. Sauro Henrique de Almeida</h3>
+        <ul class="space-y-2 text-black opacity-90 text-base">
           <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Vice-presidente da Junta Comercial de MG</li>
           <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Conselheiro do Conselho de Contribuintes do Estado de Minas Gerais</li>
           <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Presidente do SESCON/MG</li>
@@ -506,8 +588,8 @@ servicesObserver.observe(servicesTitleElement);
       <!-- Card 2 -->
       <div class="flex flex-col items-start p-6 bg-gray-400 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-300">
         <img src="https://i.postimg.cc/fRwqMNm0/aleandro.png" alt="Dr. Aleandro Pinto" class="w-24 h-24 object-cover rounded-full shadow-md mb-4 max-w-full" />
-        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Dr. Aleandro Pinto</h3> <!-- Tamanho da fonte aumentado -->
-        <ul class="space-y-2 text-white opacity-90 text-base"> <!-- Fonte das qualificações aumentada -->
+        <h3 class="text-2xl font-semibold mb-4 text-black">Dr. Aleandro Pinto</h3>
+        <ul class="space-y-2 text-black opacity-90 text-base">
           <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Professor de direito tributário na PUC-MG</li>
           <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Mestre em direito tributário pela Universidade FUMEC</li>
           <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Autor dos livros: Lições de Direito Tributário e A Ineficácia do Direito Penal Tributário.</li>
@@ -518,8 +600,8 @@ servicesObserver.observe(servicesTitleElement);
       <!-- Card 3 -->
       <div class="flex flex-col items-start p-6 bg-gray-400 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-300">
         <img src="https://i.postimg.cc/3RpFgS2T/poliana.png" alt="Dra. Polyany Cunha" class="w-24 h-24 object-cover rounded-full shadow-md mb-4 max-w-full" />
-        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Dra. Polyany Cunha</h3> <!-- Tamanho da fonte aumentado -->
-        <ul class="space-y-2 text-white opacity-90 text-base"> <!-- Fonte das qualificações aumentada -->
+        <h3 class="text-2xl font-semibold mb-4 text-black">Dra. Polyany Cunha</h3>
+        <ul class="space-y-2 text-black opacity-90 text-base">
           <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Especialista em direito tributário e empresarial</li>
           <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Professora de pós-graduação na PUC-MG</li>
           <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Especialista em direito societário e compliance</li>
@@ -529,8 +611,8 @@ servicesObserver.observe(servicesTitleElement);
       <!-- Card 4 -->
       <div class="flex flex-col items-start p-6 bg-gray-400 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-300">
         <img src="https://i.postimg.cc/gcQ6Y2Wx/antonio.jpg" alt="Dr. Antônio Cesar Ribeiro" class="w-24 h-24 object-cover rounded-full shadow-md mb-4 max-w-full" />
-        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Dr. Antônio Cesar Ribeiro</h3> <!-- Tamanho da fonte aumentado -->
-        <ul class="space-y-2 text-white opacity-90 text-base"> <!-- Fonte das qualificações aumentada -->
+        <h3 class="text-2xl font-semibold mb-4 text-black">Dr. Antônio Cesar Ribeiro</h3>
+        <ul class="space-y-2 text-black opacity-90 text-base">
           <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Vice-presidente do conselho de contribuintes – AGE-MG (2024-2026)</li>
           <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Presidência e coordenação de sessões do CCMG</li>
           <li class="flex items-start"><span class="text-primary font-bold mr-2">✔</span> Elaboração de pareceres tributários com fundamento legal</li>
@@ -588,23 +670,23 @@ servicesObserver.observe(servicesTitleElement);
 <div id="consultoria-popup" 
      class="fixed inset-0 flex items-center justify-center bg-black/40 hidden z-[9999]">
   
-  <div class="relative rounded-2xl shadow-2xl p-8 w-[90%] max-w-md transform scale-90 opacity-0 animate-popup overflow-hidden">
+  <div class="relative rounded-2xl shadow-2xl p-8 w-[90%] max-w-md transform scale-90 opacity-0 animate-popup overflow-hidden pulse-box">
 
     <!-- Fundo com sua imagem GIF -->
     <div class="absolute inset-0 bg-[url('https://i.postimg.cc/02SKr1kc/logo2.png')] bg-cover bg-center"></div>
     <!-- Overlay para contraste -->
-    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="absolute inset-0 bg-black/80"></div>
 
     <!-- Conteúdo -->
     <div class="relative z-10 text-white">
       
       <!-- Botão Fechar -->
       <button id="close-popup" 
-              class="absolute top-3 right-3 text-gray-300 hover:text-red-400 text-xl font-bold z-20">
+              class="absolute top-3 right-3 text-gray-300 hover:text-red-400 text-4xl font-bold z-20">
         &times;
       </button>
 
-      <!-- Ícone SVG (Exclamação em círculo branco) -->
+      <!-- Ícone SVG -->
       <div class="flex justify-center mb-4">
         <svg xmlns="http://www.w3.org/2000/svg" 
              class="h-14 w-14 text-white" 
@@ -621,21 +703,21 @@ servicesObserver.observe(servicesTitleElement);
       </h3>
 
       <!-- Texto -->
-      <p class="text-center mb-6 text-sm">
+      <p class="text-center mb-5 text-base">
         Aproveite esta oportunidade exclusiva e fale agora com um especialista no WhatsApp.
       </p>
       
       <!-- Botão WhatsApp -->
       <a href="https://wa.me/5531991364029?text=Olá,%20gostaria%20de%20aproveitar%20a%20consultoria%20gratuita%20que%20acabei%20de%20ganhar." 
          target="_blank"
-         class="block text-center bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg transition font-semibold">
+         class="block text-center bg-blue-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg transition font-semibold">
         CONSULTURIA GRATUITA
       </a>
     </div>
   </div>
 </div>
 
-<!-- ================= CSS ANIMAÇÃO ================= -->
+<!-- ================= CSS ANIMAÇÕES ================= -->
 <style>
 @keyframes popupAnimation {
   0% { opacity: 0; transform: scale(0.8) translateY(40px); }
@@ -644,6 +726,17 @@ servicesObserver.observe(servicesTitleElement);
 }
 .animate-popup {
   animation: popupAnimation 0.7s ease forwards;
+}
+
+/* Animação de pulsar */
+@keyframes pulseBox {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+.pulse-box {
+  animation: popupAnimation 0.7s ease forwards, 
+             pulseBox 2s infinite ease-in-out;
 }
 </style>
 
@@ -671,6 +764,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+
 
 
 

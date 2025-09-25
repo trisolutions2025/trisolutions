@@ -117,7 +117,7 @@
     </div>
   </nav>
   <!-- 1) Hero Section (Atualizada com fundo, overlay e botões padronizados) -->
-<section id="home" class="relative text-white py-0 md:py-20">
+<section id="home" class="relative text-white py-20 md:py-32">
   <!-- Imagem de fundo -->
   <div class="absolute inset-0 -z-10">
     <img src="https://i.postimg.cc/jSwKQP3X/negociacaopassivo.jpg" 
@@ -623,32 +623,34 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
 
 <footer class="bg-gray-900 text-white py-12">
-  <div class="container mx-auto px-6">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full max-w-full">
     <div class="flex flex-col md:flex-row justify-between">
 
       <!-- Logo, redes e descrição -->
-      <div class="mb-8 md:mb-0">
-        <div class="flex items-center gap-4 mb-4">
-          <span class="text-5xl font-semibold text-white animate-logo" style="font-family: 'Cinzel', serif;">
+      <div class="mb-8 md:mb-0 md:pr-12">
+        <div class="flex flex-col items-center gap-3 mb-4 text-center">
+          <span class="text-4xl sm:text-5xl font-semibold text-white animate-logo" style="font-family: 'Cinzel', serif;">
             TRIsolutions
           </span>
           <!-- Ícones sociais -->
           <div class="flex gap-3">
-            <a href="https://www.instagram.com/_trisolutions_/" target="_blank" class="text-pink-500 hover:text-pink-400 text-2xl transition">
+            <a href="https://www.instagram.com/_trisolutions_/" target="_blank" 
+               class="text-pink-500 hover:text-pink-400 text-3xl transition">
               <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://wa.me/5531991364029?text=Olá,%20gostaria%20de%20obter%20uma%20consultoria%20tributária%20para%20minha%20empresa." target="_blank" class="text-green-500 hover:text-green-400 text-2xl transition">
+            <a href="https://wa.me/5531991364029?text=Olá,%20gostaria%20de%20obter%20uma%20consultoria%20tributária%20para%20minha%20empresa." 
+               target="_blank" class="text-green-500 hover:text-green-400 text-3xl transition">
               <i class="fab fa-whatsapp"></i>
             </a>
           </div>
         </div>
-        <p class="text-gray-400 max-w-xs">
+        <p class="text-gray-400 max-w-xs text-center md:text-left">
           Especialistas em soluções tributárias estratégicas para empresas de todos os portes e segmentos.
         </p>
       </div>
 
       <!-- Links -->
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 w-full text-center md:text-left">
 
         <!-- Serviços -->
         <div>
@@ -700,8 +702,5 @@
     });
   });
 </script>
-
-<!-- Font Awesome -->
-<script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
 </body>
 </html>
